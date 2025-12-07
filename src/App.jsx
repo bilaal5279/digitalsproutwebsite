@@ -14,6 +14,7 @@ import {
   Check,
 } from "lucide-react";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsOfService from "./components/TermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -632,6 +633,14 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/Findmydevice/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    FindMyDevice Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -663,6 +672,10 @@ const App = () => {
         <Route
           path="/Findmydevice/privacy-policy"
           element={<PrivacyPolicy />}
+        />
+        <Route
+          path="/Findmydevice/terms-of-service"
+          element={<TermsOfService />}
         />
       </Routes>
     </Router>

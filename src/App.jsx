@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
+import PaidPrivacyPolicy from "./components/PaidPrivacyPolicy";
+import PaidTermsOfService from "./components/PaidTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,9 +39,8 @@ const HomePage = () => {
     <div className="min-h-screen flex flex-col bg-gray-50 w-full">
       {/* Navigation */}
       <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
-        }`}
+        className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+          }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
@@ -641,6 +642,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/paid/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Paid Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/paid/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Paid Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -676,6 +693,14 @@ const App = () => {
         <Route
           path="/Findmydevice/terms-of-service"
           element={<TermsOfService />}
+        />
+        <Route
+          path="/paid/privacy-policy"
+          element={<PaidPrivacyPolicy />}
+        />
+        <Route
+          path="/paid/terms-of-service"
+          element={<PaidTermsOfService />}
         />
       </Routes>
     </Router>

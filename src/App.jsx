@@ -15,8 +15,6 @@ import {
 } from "lucide-react";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
-import PdfConverterPrivacyPolicy from "./components/PdfConverterPrivacyPolicy";
-import PdfConverterTermsOfService from "./components/PdfConverterTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -642,6 +640,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/paid/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Paid Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/paid/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Paid Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -677,14 +691,6 @@ const App = () => {
         <Route
           path="/Findmydevice/terms-of-service"
           element={<TermsOfService />}
-        />
-        <Route
-          path="/pdfconverter/privacypolicy"
-          element={<PdfConverterPrivacyPolicy />}
-        />
-        <Route
-          path="/pdfconverter/terms-of-service"
-          element={<PdfConverterTermsOfService />}
         />
       </Routes>
     </Router>

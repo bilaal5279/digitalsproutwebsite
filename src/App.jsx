@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
+import PdfConverterPrivacyPolicy from "./components/PdfConverterPrivacyPolicy";
+import PdfConverterTermsOfService from "./components/PdfConverterTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,9 +39,8 @@ const HomePage = () => {
     <div className="min-h-screen flex flex-col bg-gray-50 w-full">
       {/* Navigation */}
       <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
-        }`}
+        className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+          }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
@@ -676,6 +677,14 @@ const App = () => {
         <Route
           path="/Findmydevice/terms-of-service"
           element={<TermsOfService />}
+        />
+        <Route
+          path="/pdfconverter/privacypolicy"
+          element={<PdfConverterPrivacyPolicy />}
+        />
+        <Route
+          path="/pdfconverter/terms-of-service"
+          element={<PdfConverterTermsOfService />}
         />
       </Routes>
     </Router>

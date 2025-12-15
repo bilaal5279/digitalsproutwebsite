@@ -19,6 +19,8 @@ import PdfConverterPrivacyPolicy from "./components/PdfConverterPrivacyPolicy";
 import PdfConverterTermsOfService from "./components/PdfConverterTermsOfService";
 import PaidPrivacyPolicy from "./components/PaidPrivacyPolicy";
 import PaidTermsOfService from "./components/PaidTermsOfService";
+import BloodPressurePrivacyPolicy from "./components/BloodPressurePrivacyPolicy";
+import BloodPressureTermsOfService from "./components/BloodPressureTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -711,6 +713,14 @@ const App = () => {
         <Route
           path="/paid/terms-of-service"
           element={<PaidTermsOfService />}
+        />
+        <Route
+          path="/bp/privacypolicy"
+          element={<BloodPressurePrivacyPolicy />}
+        />
+        <Route
+          path="/bp/terms-of-service"
+          element={<BloodPressureTermsOfService />}
         />
       </Routes>
     </Router>

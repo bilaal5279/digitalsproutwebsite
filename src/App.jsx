@@ -21,6 +21,8 @@ import PaidPrivacyPolicy from "./components/PaidPrivacyPolicy";
 import PaidTermsOfService from "./components/PaidTermsOfService";
 import BloodPressurePrivacyPolicy from "./components/BloodPressurePrivacyPolicy";
 import BloodPressureTermsOfService from "./components/BloodPressureTermsOfService";
+import PocketWealthPrivacyPolicy from "./components/PocketWealthPrivacyPolicy";
+import PocketWealthTermsOfService from "./components/PocketWealthTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -662,6 +664,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/pocketwealth/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    PocketWealth Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/pocketwealth/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    PocketWealth Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -721,6 +739,14 @@ const App = () => {
         <Route
           path="/bp/terms-of-service"
           element={<BloodPressureTermsOfService />}
+        />
+        <Route
+          path="/pocketwealth/privacy-policy"
+          element={<PocketWealthPrivacyPolicy />}
+        />
+        <Route
+          path="/pocketwealth/terms-of-service"
+          element={<PocketWealthTermsOfService />}
         />
       </Routes>
     </Router>

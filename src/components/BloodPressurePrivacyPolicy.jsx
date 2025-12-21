@@ -106,10 +106,10 @@ const BloodPressurePrivacyPolicy = () => {
                     <section className="mb-8">
                         <div className="flex items-center mb-4">
                             <Lock size={24} className="text-red-600 mr-3" />
-                            <h2 className="text-2xl font-bold text-gray-900">Local Storage Only</h2>
+                            <h2 className="text-2xl font-bold text-gray-900">Data Storage</h2>
                         </div>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            All your health data is stored locally on your device.
+                            Your health data is stored securely on your device and in your personal iCloud container:
                         </p>
                         <ul className="space-y-2 text-gray-600 mb-4">
                             <li className="flex items-start">
@@ -118,11 +118,19 @@ const BloodPressurePrivacyPolicy = () => {
                             </li>
                             <li className="flex items-start">
                                 <span className="text-red-600 mr-2">•</span>
-                                We do not have access to your data
+                                Synced securely to your private iCloud container using Apple's CloudKit
                             </li>
                             <li className="flex items-start">
                                 <span className="text-red-600 mr-2">•</span>
-                                Deleting the app will delete all your local data
+                                We do not have access to your data in CloudKit
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-red-600 mr-2">•</span>
+                                Never transmitted to our external servers
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-red-600 mr-2">•</span>
+                                Deleting the app will delete the local copy of your data
                             </li>
                         </ul>
                     </section>

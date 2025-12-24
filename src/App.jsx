@@ -23,6 +23,8 @@ import BloodPressurePrivacyPolicy from "./components/BloodPressurePrivacyPolicy"
 import BloodPressureTermsOfService from "./components/BloodPressureTermsOfService";
 import PocketWealthPrivacyPolicy from "./components/PocketWealthPrivacyPolicy";
 import PocketWealthTermsOfService from "./components/PocketWealthTermsOfService";
+import WtmpPrivacyPolicy from "./components/WtmpPrivacyPolicy";
+import WtmpTermsOfService from "./components/WtmpTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -747,6 +749,14 @@ const App = () => {
         <Route
           path="/pocketwealth/terms-of-service"
           element={<PocketWealthTermsOfService />}
+        />
+        <Route
+          path="/wtmp/privacy-policy"
+          element={<WtmpPrivacyPolicy />}
+        />
+        <Route
+          path="/wtmp/terms-of-service"
+          element={<WtmpTermsOfService />}
         />
       </Routes>
     </Router>

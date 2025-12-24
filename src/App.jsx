@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import {
   Menu,
   X,
@@ -25,6 +25,7 @@ import PocketWealthPrivacyPolicy from "./components/PocketWealthPrivacyPolicy";
 import PocketWealthTermsOfService from "./components/PocketWealthTermsOfService";
 import WtmpPrivacyPolicy from "./components/WtmpPrivacyPolicy";
 import WtmpTermsOfService from "./components/WtmpTermsOfService";
+import SupportPage from "./components/SupportPage";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -94,12 +95,12 @@ const HomePage = () => {
               </div>
             </div>
             <div className="hidden md:flex md:items-center md:space-x-4">
-              <a
-                href="#contact"
+              <Link
+                to="/support"
                 className="text-gray-600 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200"
               >
                 Contact
-              </a>
+              </Link>
               <a
                 href="https://play.google.com/store/apps/details?id=com.bilaal5279.weightly"
                 target="_blank"
@@ -601,7 +602,9 @@ const HomePage = () => {
                   <span className="text-gray-400">About (Coming Soon)</span>
                 </li>
                 <li>
-                  <span className="text-gray-400">Contact Us</span>
+                  <Link to="/support" className="text-gray-400 hover:text-teal-300 transition-colors">
+                    Contact Us
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -758,6 +761,7 @@ const App = () => {
           path="/wtmp/terms-of-service"
           element={<WtmpTermsOfService />}
         />
+        <Route path="/support" element={<SupportPage />} />
       </Routes>
     </Router>
   );

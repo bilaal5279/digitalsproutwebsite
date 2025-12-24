@@ -102,10 +102,10 @@ const PocketWealthPrivacyPolicy = () => {
                     <section className="mb-8">
                         <div className="flex items-center mb-4">
                             <Lock size={24} className="text-emerald-600 mr-3" />
-                            <h2 className="text-2xl font-bold text-gray-900">Local Storage Only</h2>
+                            <h2 className="text-2xl font-bold text-gray-900">Data Storage</h2>
                         </div>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            All app functionality operates entirely on your device. Your data is:
+                            Your data is stored securely on your device and in your personal iCloud container:
                         </p>
                         <ul className="space-y-2 text-gray-600 mb-4">
                             <li className="flex items-start">
@@ -114,7 +114,15 @@ const PocketWealthPrivacyPolicy = () => {
                             </li>
                             <li className="flex items-start">
                                 <span className="text-emerald-600 mr-2">•</span>
-                                Never transmitted to cloud servers
+                                Synced securely to your private iCloud container using Apple's CloudKit
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-emerald-600 mr-2">•</span>
+                                We do not have access to your data in CloudKit
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-emerald-600 mr-2">•</span>
+                                Never transmitted to our external servers
                             </li>
                             <li className="flex items-start">
                                 <span className="text-emerald-600 mr-2">•</span>

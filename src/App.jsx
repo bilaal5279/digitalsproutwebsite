@@ -25,6 +25,7 @@ import PocketWealthPrivacyPolicy from "./components/PocketWealthPrivacyPolicy";
 import PocketWealthTermsOfService from "./components/PocketWealthTermsOfService";
 import WtmpPrivacyPolicy from "./components/WtmpPrivacyPolicy";
 import WtmpTermsOfService from "./components/WtmpTermsOfService";
+import MetalStudFinderPrivacyPolicy from "./components/MetalStudFinderPrivacyPolicy";
 import SupportPage from "./components/SupportPage";
 import "./App.css";
 const HomePage = () => {
@@ -760,6 +761,10 @@ const App = () => {
         <Route
           path="/wtmp/terms-of-service"
           element={<WtmpTermsOfService />}
+        />
+        <Route
+          path="/metal/privacy-policy"
+          element={<MetalStudFinderPrivacyPolicy />}
         />
         <Route path="/support" element={<SupportPage />} />
       </Routes>

@@ -28,6 +28,7 @@ import WtmpTermsOfService from "./components/WtmpTermsOfService";
 import MetalStudFinderPrivacyPolicy from "./components/MetalStudFinderPrivacyPolicy";
 import ArachnidPrivacyPolicy from "./components/ArachnidPrivacyPolicy";
 import ArachnidTermsOfService from "./components/ArachnidTermsOfService";
+import MicToSpeakerPrivacyPolicy from "./components/MicToSpeakerPrivacyPolicy";
 import SupportPage from "./components/SupportPage";
 import "./App.css";
 const HomePage = () => {
@@ -704,6 +705,14 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/bmic/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Mic to Speaker Privacy Policy
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -791,6 +800,10 @@ const App = () => {
         <Route
           path="/arachnid/terms-of-service"
           element={<ArachnidTermsOfService />}
+        />
+        <Route
+          path="/bmic/privacy-policy"
+          element={<MicToSpeakerPrivacyPolicy />}
         />
         <Route path="/support" element={<SupportPage />} />
       </Routes>

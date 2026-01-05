@@ -29,6 +29,8 @@ import MetalStudFinderPrivacyPolicy from "./components/MetalStudFinderPrivacyPol
 import ArachnidPrivacyPolicy from "./components/ArachnidPrivacyPolicy";
 import ArachnidTermsOfService from "./components/ArachnidTermsOfService";
 import MicToSpeakerPrivacyPolicy from "./components/MicToSpeakerPrivacyPolicy";
+import SpeakerPrivacyPolicy from "./components/SpeakerPrivacyPolicy";
+import SpeakerTermsOfService from "./components/SpeakerTermsOfService";
 import SupportPage from "./components/SupportPage";
 import "./App.css";
 const HomePage = () => {
@@ -713,6 +715,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/speaker/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Speaker Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/speaker/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Speaker Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -796,6 +814,14 @@ const App = () => {
         <Route
           path="/arachnid/privacy-policy"
           element={<ArachnidPrivacyPolicy />}
+        />
+        <Route
+          path="/speaker/privacy-policy"
+          element={<SpeakerPrivacyPolicy />}
+        />
+        <Route
+          path="/speaker/terms-of-service"
+          element={<SpeakerTermsOfService />}
         />
         <Route
           path="/arachnid/terms-of-service"

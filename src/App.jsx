@@ -31,6 +31,8 @@ import ArachnidTermsOfService from "./components/ArachnidTermsOfService";
 import MicToSpeakerPrivacyPolicy from "./components/MicToSpeakerPrivacyPolicy";
 import SpeakerPrivacyPolicy from "./components/SpeakerPrivacyPolicy";
 import SpeakerTermsOfService from "./components/SpeakerTermsOfService";
+import PokeyPrivacyPolicy from "./components/PokeyPrivacyPolicy";
+import PokeyTermsOfService from "./components/PokeyTermsOfService";
 import SupportPage from "./components/SupportPage";
 import "./App.css";
 const HomePage = () => {
@@ -731,6 +733,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/pokey/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Pokey Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/pokey/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Pokey Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -794,6 +812,14 @@ const App = () => {
         <Route
           path="/pocketwealth/privacy-policy"
           element={<PocketWealthPrivacyPolicy />}
+        />
+        <Route
+          path="/pokey/privacy-policy"
+          element={<PokeyPrivacyPolicy />}
+        />
+        <Route
+          path="/pokey/terms-of-service"
+          element={<PokeyTermsOfService />}
         />
         <Route
           path="/pocketwealth/terms-of-service"

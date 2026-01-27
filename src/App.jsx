@@ -33,7 +33,10 @@ import SpeakerPrivacyPolicy from "./components/SpeakerPrivacyPolicy";
 import SpeakerTermsOfService from "./components/SpeakerTermsOfService";
 import PokeyPrivacyPolicy from "./components/PokeyPrivacyPolicy";
 import PokeyTermsOfService from "./components/PokeyTermsOfService";
+import Link from "react-router-dom";
 import SupportPage from "./components/SupportPage";
+import FishIdPrivacyPolicy from "./components/FishIdPrivacyPolicy";
+import FishIdTermsOfService from "./components/FishIdTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -749,6 +752,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/fishid/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    FishID Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/fishid/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    FishID Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -820,6 +839,14 @@ const App = () => {
         <Route
           path="/pokey/terms-of-service"
           element={<PokeyTermsOfService />}
+        />
+        <Route
+          path="/fishid/privacy-policy"
+          element={<FishIdPrivacyPolicy />}
+        />
+        <Route
+          path="/fishid/terms-of-service"
+          element={<FishIdTermsOfService />}
         />
         <Route
           path="/pocketwealth/terms-of-service"

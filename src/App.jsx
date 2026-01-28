@@ -33,7 +33,7 @@ import SpeakerPrivacyPolicy from "./components/SpeakerPrivacyPolicy";
 import SpeakerTermsOfService from "./components/SpeakerTermsOfService";
 import PokeyPrivacyPolicy from "./components/PokeyPrivacyPolicy";
 import PokeyTermsOfService from "./components/PokeyTermsOfService";
-import Link from "react-router-dom";
+
 import SupportPage from "./components/SupportPage";
 import FishIdPrivacyPolicy from "./components/FishIdPrivacyPolicy";
 import FishIdTermsOfService from "./components/FishIdTermsOfService";

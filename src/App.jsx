@@ -37,6 +37,8 @@ import PokeyTermsOfService from "./components/PokeyTermsOfService";
 import SupportPage from "./components/SupportPage";
 import FishIdPrivacyPolicy from "./components/FishIdPrivacyPolicy";
 import FishIdTermsOfService from "./components/FishIdTermsOfService";
+import UnsentPrivacyPolicy from "./components/UnsentPrivacyPolicy";
+import UnsentTermsOfService from "./components/UnsentTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -768,6 +770,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/unsent/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Unsent Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/unsent/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Unsent Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -796,6 +814,8 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/unsent/privacy-policy" element={<UnsentPrivacyPolicy />} />
+        <Route path="/unsent/terms-of-service" element={<UnsentTermsOfService />} />
         <Route
           path="/Findmydevice/privacy-policy"
           element={<PrivacyPolicy />}

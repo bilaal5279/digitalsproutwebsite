@@ -69,11 +69,10 @@ const UnsentPrivacyPolicy = () => {
                         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
                             <div className="flex items-center mb-2">
                                 <Eye size={20} className="text-green-600 mr-2" />
-                                <h3 className="text-lg font-semibold text-green-800">We Collect No Personal Data</h3>
+                                <h3 className="text-lg font-semibold text-green-800">Your App Content is Private</h3>
                             </div>
                             <p className="text-green-700">
-                                UNSENT: NO CONTACT TRACKER does not collect, store, or transmit any personal information, journal entries, or logs
-                                to external servers or third parties. All your data resides strictly on your device.
+                                UNSENT: NO CONTACT TRACKER does not collect, store, or transmit your contact tracking data, journal entries, or personal logs to our servers. While your content stays securely on your device, we use a third-party SDK that collects basic usage information.
                             </p>
                         </div>
 
@@ -138,9 +137,25 @@ const UnsentPrivacyPolicy = () => {
                     {/* Third Party Services */}
                     <section className="mb-8">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">Third-Party Services</h2>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            We use the Facebook SDK provided by Meta to help us understand app usage and deliver relevant advertisements. Meta may collect data through this SDK for use in Meta ads. Data collected by the Facebook SDK may include:
+                        </p>
+                        <ul className="space-y-2 text-gray-600 mb-4">
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>App events:</strong> Information such as app installs, app launches, and general in-app actions.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>Device information:</strong> Unique device identifiers, operating system version, device model, and IP address.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>App usage data:</strong> Time spent in the app and overall engagement metrics.
+                            </li>
+                        </ul>
                         <p className="text-gray-600 leading-relaxed">
-                            UNSENT: NO CONTACT TRACKER does not integrate with any third-party services, analytics platforms, advertising networks,
-                            or external APIs that collect user data.
+                            For more details on how Meta handles your information, please review the <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Meta Privacy Policy</a>.
                         </p>
                     </section>
 
@@ -148,8 +163,7 @@ const UnsentPrivacyPolicy = () => {
                     <section className="mb-8">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">Data Security</h2>
                         <p className="text-gray-600 leading-relaxed">
-                            Since we don't collect, store, or transmit any data, your information remains as secure as your device itself.
-                            We eliminate the risk of server-side data breaches by not using servers at all.
+                            Since your core app content and journal entries are not collected or transmitted to our servers, that sensitive information remains as secure as your device itself. We minimize server-side risks by keeping your personal content local.
                         </p>
                     </section>
 
@@ -193,8 +207,7 @@ const UnsentPrivacyPolicy = () => {
                             <h3 className="text-lg font-semibold text-indigo-800">Privacy Summary</h3>
                         </div>
                         <p className="text-indigo-700 font-medium">
-                            UNSENT: NO CONTACT TRACKER is designed with privacy by default. We collect no data, store nothing externally,
-                            and all data resides locally on your device. Your privacy is completely protected.
+                            UNSENT: NO CONTACT TRACKER is designed to keep your personal journal and tracking data private on your device. While we use the Facebook SDK which collects basic device and usage data for advertising, your intimate app content is never transmitted or shared.
                         </p>
                     </div>
                 </div>

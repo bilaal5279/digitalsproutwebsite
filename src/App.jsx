@@ -39,6 +39,8 @@ import FishIdPrivacyPolicy from "./components/FishIdPrivacyPolicy";
 import FishIdTermsOfService from "./components/FishIdTermsOfService";
 import UnsentPrivacyPolicy from "./components/UnsentPrivacyPolicy";
 import UnsentTermsOfService from "./components/UnsentTermsOfService";
+import RevivePrivacyPolicy from "./components/RevivePrivacyPolicy";
+import ReviveTermsOfService from "./components/ReviveTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -786,6 +788,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/revive/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Revive Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/revive/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Revive Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -816,6 +834,8 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/unsent/privacy-policy" element={<UnsentPrivacyPolicy />} />
         <Route path="/unsent/terms-of-service" element={<UnsentTermsOfService />} />
+        <Route path="/revive/privacy-policy" element={<RevivePrivacyPolicy />} />
+        <Route path="/revive/terms-of-service" element={<ReviveTermsOfService />} />
         <Route
           path="/Findmydevice/privacy-policy"
           element={<PrivacyPolicy />}

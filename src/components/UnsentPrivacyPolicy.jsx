@@ -54,7 +54,7 @@ const UnsentPrivacyPolicy = () => {
                             <h2 className="text-2xl font-bold text-gray-900">Introduction</h2>
                         </div>
                         <p className="text-gray-600 leading-relaxed">
-                            UNSENT: NO CONTACT TRACKER is an application designed to help you maintain no contact and track your healing journey with your privacy as the absolute priority.
+                            UNSENT: NO CONTACT TRACKER is an application designed to help you maintain no contact and track your healing journey with your privacy as the absolute priority. This includes our AI assistant, <strong>Sage</strong>, which is designed to provide empathetic support and guidance during your breakup recovery.
                             We are committed to full transparency regarding our data practices. This privacy policy
                             explains how we handle information in our app.
                         </p>
@@ -69,12 +69,31 @@ const UnsentPrivacyPolicy = () => {
                         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
                             <div className="flex items-center mb-2">
                                 <Eye size={20} className="text-green-600 mr-2" />
-                                <h3 className="text-lg font-semibold text-green-800">Your App Content is Private</h3>
+                                <h3 className="text-lg font-semibold text-green-800">Your Personal Content is Private</h3>
                             </div>
                             <p className="text-green-700">
-                                UNSENT: NO CONTACT TRACKER does not collect, store, or transmit your contact tracking data, journal entries, or personal logs to our servers. While your content stays securely on your device, we use a third-party SDK that collects basic usage information.
+                                UNSENT does not collect, store, or transmit your contact tracking data, personal journal entries, or private logs to our servers. These stay securely on your device. When you interact with our AI assistant, Sage, data is handled differently as explained below.
                             </p>
                         </div>
+
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">Sage AI Assistant Interactions</h3>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            When you chat with <strong>Sage</strong>, your messages are processed through OpenAI's ChatGPT API to generate helpful and supportive responses.
+                        </p>
+                        <ul className="space-y-2 text-gray-600 mb-4">
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>Processing:</strong> Chat messages are sent to OpenAI servers to generate the AI's response.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>No Training:</strong> According to OpenAI's API policies, data sent via the API is not used to train their models.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>Retention:</strong> OpenAI may retain API data for up to 30 days for abuse and misuse monitoring purposes only, after which it is deleted.
+                            </li>
+                        </ul>
 
                         <h3 className="text-lg font-semibold text-gray-900 mb-3">What We Don't Collect:</h3>
                         <ul className="space-y-2 text-gray-600">
@@ -84,7 +103,7 @@ const UnsentPrivacyPolicy = () => {
                             </li>
                             <li className="flex items-start">
                                 <span className="text-indigo-600 mr-2">•</span>
-                                Journal entries, mood logs, or tracking data
+                                Journal entries or private logs (unless explicitly shared with Sage)
                             </li>
                             <li className="flex items-start">
                                 <span className="text-indigo-600 mr-2">•</span>
@@ -93,10 +112,6 @@ const UnsentPrivacyPolicy = () => {
                             <li className="flex items-start">
                                 <span className="text-indigo-600 mr-2">•</span>
                                 Location data or GPS coordinates
-                            </li>
-                            <li className="flex items-start">
-                                <span className="text-indigo-600 mr-2">•</span>
-                                Usage analytics or app behavior data
                             </li>
                         </ul>
                     </section>
@@ -108,7 +123,7 @@ const UnsentPrivacyPolicy = () => {
                             <h2 className="text-2xl font-bold text-gray-900">Data Storage</h2>
                         </div>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            Your data is stored securely on your device and in your personal iCloud container:
+                            Your core data is stored securely on your device and in your personal iCloud container:
                         </p>
                         <ul className="space-y-2 text-gray-600 mb-4">
                             <li className="flex items-start">
@@ -125,11 +140,7 @@ const UnsentPrivacyPolicy = () => {
                             </li>
                             <li className="flex items-start">
                                 <span className="text-indigo-600 mr-2">•</span>
-                                Never transmitted to our external servers
-                            </li>
-                            <li className="flex items-start">
-                                <span className="text-indigo-600 mr-2">•</span>
-                                Deleting the app will delete the local copy of your data
+                                Chat history with Sage may be stored locally on your device for your reference
                             </li>
                         </ul>
                     </section>
@@ -138,32 +149,25 @@ const UnsentPrivacyPolicy = () => {
                     <section className="mb-8">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">Third-Party Services</h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            We use the Facebook SDK provided by Meta to help us understand app usage and deliver relevant advertisements. Meta may collect data through this SDK for use in Meta ads. Data collected by the Facebook SDK may include:
+                            We use the following third-party services to provide and improve our app:
                         </p>
-                        <ul className="space-y-2 text-gray-600 mb-4">
-                            <li className="flex items-start">
-                                <span className="text-indigo-600 mr-2">•</span>
-                                <strong>App events:</strong> Information such as app installs, app launches, and general in-app actions.
-                            </li>
-                            <li className="flex items-start">
-                                <span className="text-indigo-600 mr-2">•</span>
-                                <strong>Device information:</strong> Unique device identifiers, operating system version, device model, and IP address.
-                            </li>
-                            <li className="flex items-start">
-                                <span className="text-indigo-600 mr-2">•</span>
-                                <strong>App usage data:</strong> Time spent in the app and overall engagement metrics.
-                            </li>
-                        </ul>
-                        <p className="text-gray-600 leading-relaxed">
-                            For more details on how Meta handles your information, please review the <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Meta Privacy Policy</a>.
-                        </p>
+                        <div className="space-y-4">
+                            <div>
+                                <h3 className="font-semibold text-gray-900">OpenAI (ChatGPT API)</h3>
+                                <p className="text-gray-600 text-sm">Processes Sage AI chat messages to provide support. Data is not used for model training. <a href="https://openai.com/policies/api-data-usage-policies" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">View OpenAI API Policies</a>.</p>
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-gray-900">Facebook SDK (Meta)</h3>
+                                <p className="text-gray-600 text-sm">Helps us understand app usage and deliver relevant advertisements. Meta may collect device info and app events. <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">View Meta Privacy Policy</a>.</p>
+                            </div>
+                        </div>
                     </section>
 
                     {/* Security */}
                     <section className="mb-8">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">Data Security</h2>
                         <p className="text-gray-600 leading-relaxed">
-                            Since your core app content and journal entries are not collected or transmitted to our servers, that sensitive information remains as secure as your device itself. We minimize server-side risks by keeping your personal content local.
+                            Since your core app content and journal entries are not collected or transmitted to our servers, that sensitive information remains as secure as your device itself. AI interactions are transmitted via encrypted channels to OpenAI. We minimize risks by keeping your personal content local.
                         </p>
                     </section>
 
@@ -207,7 +211,7 @@ const UnsentPrivacyPolicy = () => {
                             <h3 className="text-lg font-semibold text-indigo-800">Privacy Summary</h3>
                         </div>
                         <p className="text-indigo-700 font-medium">
-                            UNSENT: NO CONTACT TRACKER is designed to keep your personal journal and tracking data private on your device. While we use the Facebook SDK which collects basic device and usage data for advertising, your intimate app content is never transmitted or shared.
+                            UNSENT: NO CONTACT TRACKER keeps your intimate journal and tracking data private on your device. While Sage AI interactions are processed by OpenAI to provide breakup support, your data is not used for training and remains protected.
                         </p>
                     </div>
                 </div>

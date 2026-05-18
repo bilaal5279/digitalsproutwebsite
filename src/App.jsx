@@ -41,6 +41,8 @@ import UnsentPrivacyPolicy from "./components/UnsentPrivacyPolicy";
 import UnsentTermsOfService from "./components/UnsentTermsOfService";
 import RevivePrivacyPolicy from "./components/RevivePrivacyPolicy";
 import ReviveTermsOfService from "./components/ReviveTermsOfService";
+import HoursTrackerPrivacyPolicy from "./components/HoursTrackerPrivacyPolicy";
+import HoursTrackerTermsOfService from "./components/HoursTrackerTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -804,6 +806,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/hourstracker/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Hours Tracker Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/hourstracker/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Hours Tracker Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -923,6 +941,14 @@ const App = () => {
         <Route
           path="/bmic/privacy-policy"
           element={<MicToSpeakerPrivacyPolicy />}
+        />
+        <Route
+          path="/hourstracker/privacy-policy"
+          element={<HoursTrackerPrivacyPolicy />}
+        />
+        <Route
+          path="/hourstracker/terms-of-service"
+          element={<HoursTrackerTermsOfService />}
         />
         <Route path="/support" element={<SupportPage />} />
       </Routes>

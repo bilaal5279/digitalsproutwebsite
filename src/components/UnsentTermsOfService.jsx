@@ -70,14 +70,14 @@ const UnsentTermsOfService = () => {
                             </h3>
                         </div>
                         <p className="text-amber-700 text-sm leading-relaxed">
-                            This app and its contents are for <strong>entertainment and self-help purposes only</strong>. It does not constitute professional psychological or medical advice.
+                            This app and its contents, including interactions with our AI assistant <strong>Sage</strong>, are for <strong>entertainment and self-help purposes only</strong>. It does not constitute professional psychological or medical advice, diagnosis, or treatment.
                         </p>
                         <p className="text-amber-700 text-sm leading-relaxed mt-2">
-                            <strong>IF YOU ARE IN CRISIS:</strong> Do not rely on this app. Seek immediate professional help or contact emergency services.
+                            <strong>IF YOU ARE IN CRISIS:</strong> Do not rely on this app or Sage. Seek immediate professional help from a licensed therapist or contact emergency services (e.g., 988 in the US/Canada or your local emergency number).
                         </p>
                     </div>
 
-                    {/* Introduction */}
+                    {/* Agreement to Terms */}
                     <section className="mb-8">
                         <div className="flex items-center mb-4">
                             <Scale size={24} className="text-slate-800 mr-3" />
@@ -86,9 +86,40 @@ const UnsentTermsOfService = () => {
                             </h2>
                         </div>
                         <p className="text-gray-600 leading-relaxed">
-                            By downloading or using UNSENT ("the App"), you agree to be bound by these Terms.
+                            By downloading or using UNSENT ("the App") and interacting with <strong>Sage AI</strong>, you agree to be bound by these Terms.
                             If you do not agree, strictly do not use the App.
                         </p>
+                    </section>
+
+                    {/* Sage AI Terms */}
+                    <section className="mb-8">
+                        <div className="flex items-center mb-4">
+                            <Heart size={24} className="text-slate-800 mr-3" />
+                            <h2 className="text-2xl font-bold text-gray-900">
+                                Sage AI Assistant
+                            </h2>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            Sage is an artificial intelligence assistant powered by OpenAI's ChatGPT. By using Sage, you acknowledge and agree to the following:
+                        </p>
+                        <ul className="space-y-2 text-gray-600">
+                            <li className="flex items-start">
+                                <span className="text-amber-600 mr-2">•</span>
+                                <strong>Not a Human:</strong> Sage is not a human, not a therapist, and not a medical professional.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-amber-600 mr-2">•</span>
+                                <strong>AI Limitations:</strong> AI can make mistakes, provide inaccurate information, or generate inappropriate content. You should not rely on Sage for critical life decisions.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-amber-600 mr-2">•</span>
+                                <strong>Data Processing:</strong> Your messages to Sage are processed by OpenAI. Do not share highly sensitive personal identification information (SSNs, bank details, etc.) in your chats.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-amber-600 mr-2">•</span>
+                                <strong>Supportive Only:</strong> Sage is designed to provide empathetic support for breakup recovery, but its suggestions should be used at your own discretion.
+                            </li>
+                        </ul>
                     </section>
 
                     {/* User Responsibility */}
@@ -100,12 +131,12 @@ const UnsentTermsOfService = () => {
                             </h2>
                         </div>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            You are solely responsible for your use of the app and any actions you take based on it.
+                            You are solely responsible for your use of the app and any actions you take based on it or the AI's suggestions.
                         </p>
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-start">
                                 <span className="text-amber-600 mr-2">⚠</span>
-                                You acknowledge that the "unsent" messages are stored locally and are not securely encrypted beyond standard device protections.
+                                You acknowledge that "unsent" messages and chat history are stored locally and are not securely encrypted beyond standard device protections.
                             </li>
                             <li className="flex items-start">
                                 <span className="text-amber-600 mr-2">⚠</span>
@@ -159,11 +190,15 @@ const UnsentTermsOfService = () => {
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-start">
                                 <span className="text-slate-600 mr-2">•</span>
-                                Emotional distress or mental health issues.
+                                Emotional distress, mental health issues, or physical harm.
                             </li>
                             <li className="flex items-start">
                                 <span className="text-slate-600 mr-2">•</span>
-                                Relationship outcomes.
+                                Actions taken based on Sage AI's advice or suggestions.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-slate-600 mr-2">•</span>
+                                Relationship outcomes or social consequences.
                             </li>
                             <li className="flex items-start">
                                 <span className="text-slate-600 mr-2">•</span>

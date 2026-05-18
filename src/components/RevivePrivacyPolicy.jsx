@@ -152,7 +152,17 @@ const RevivePrivacyPolicy = () => {
                                 <span className="text-teal-600 mr-2">•</span>
                                 Firebase Analytics and Crashlytics (for app performance and troubleshooting)
                             </li>
+                            <li className="flex items-start">
+                                <span className="text-teal-600 mr-2">•</span>
+                                Google AdMob (for displaying advertisements within the App)
+                            </li>
                         </ul>
+                        <p className="text-gray-600 leading-relaxed mt-4">
+                            <strong>Advertising:</strong> We use Google AdMob to display advertisements in the free version of the App. AdMob may collect and use certain information about your device and app usage to provide personalized ads. This may include your device's advertising ID, IP address, and usage data. You can learn more about how Google uses data when you use our app by visiting Google's Privacy Policy at{' '}
+                            <a href="https://policies.google.com/privacy" className="text-teal-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                                https://policies.google.com/privacy
+                            </a>. You may opt out of personalized advertising by adjusting your device's ad settings.
+                        </p>
                     </section>
 
                     {/* Security */}

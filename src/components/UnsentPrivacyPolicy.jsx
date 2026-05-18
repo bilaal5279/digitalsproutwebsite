@@ -137,6 +137,8 @@ const UnsentPrivacyPolicy = () => {
                     {/* Third Party Services */}
                     <section className="mb-8">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">Third-Party Services</h2>
+                        
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">Facebook SDK</h3>
                         <p className="text-gray-600 leading-relaxed mb-4">
                             We use the Facebook SDK provided by Meta to help us understand app usage and deliver relevant advertisements. Meta may collect data through this SDK for use in Meta ads. Data collected by the Facebook SDK may include:
                         </p>
@@ -154,8 +156,34 @@ const UnsentPrivacyPolicy = () => {
                                 <strong>App usage data:</strong> Time spent in the app and overall engagement metrics.
                             </li>
                         </ul>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 leading-relaxed mb-6">
                             For more details on how Meta handles your information, please review the <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Meta Privacy Policy</a>.
+                        </p>
+
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">Firebase Services for Community Forums</h3>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            We use Firebase, Firestore, and Firebase Realtime Database (provided by Google) to power our community forums feature. When you participate in community forums, the following data is collected and stored:
+                        </p>
+                        <ul className="space-y-2 text-gray-600 mb-4">
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>Forum posts and comments:</strong> Content you share in community discussions.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>User profile information:</strong> Display name and any profile details you choose to share.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>Interaction data:</strong> Likes, replies, and engagement with forum content.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-indigo-600 mr-2">•</span>
+                                <strong>Timestamps:</strong> When you post or interact with forum content.
+                            </li>
+                        </ul>
+                        <p className="text-gray-600 leading-relaxed">
+                            This data is stored on Google's Firebase servers and is subject to Google's security practices. For more information about how Google handles data, please review the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Firebase Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Google Privacy Policy</a>.
                         </p>
                     </section>
 

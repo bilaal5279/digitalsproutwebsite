@@ -111,6 +111,37 @@ const UnsentTermsOfService = () => {
                                 <span className="text-amber-600 mr-2">⚠</span>
                                 You agree to use the app in a manner consistent with all applicable laws and regulations.
                             </li>
+                            <li className="flex items-start">
+                                <span className="text-amber-600 mr-2">⚠</span>
+                                When participating in community forums, you acknowledge that your posts and interactions are stored on Firebase/Firestore/Realtime Database servers and may be visible to other users.
+                            </li>
+                        </ul>
+                    </section>
+
+                    {/* Third-Party Services */}
+                    <section className="mb-8">
+                        <div className="flex items-center mb-4">
+                            <Shield size={24} className="text-slate-800 mr-3" />
+                            <h2 className="text-2xl font-bold text-gray-900">
+                                Third-Party Services
+                            </h2>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            The app uses Firebase, Firestore, and Firebase Realtime Database (provided by Google) to power community forums. By using the community forums feature, you agree to:
+                        </p>
+                        <ul className="space-y-2 text-gray-600">
+                            <li className="flex items-start">
+                                <span className="text-slate-600 mr-2">•</span>
+                                Have your forum posts, comments, and interactions stored on Google's Firebase servers.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-slate-600 mr-2">•</span>
+                                Comply with Google's Terms of Service and Firebase's Acceptable Use Policy.
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-slate-600 mr-2">•</span>
+                                Not post content that violates community guidelines or applicable laws.
+                            </li>
                         </ul>
                     </section>
 

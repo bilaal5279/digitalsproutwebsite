@@ -117,11 +117,25 @@ const ReviveTermsOfService = () => {
                         </ul>
                     </section>
                     
+                    {/* Advertising */}
+                    <section className="mb-8">
+                        <div className="flex items-center mb-4">
+                            <Zap size={24} className="text-teal-600 mr-3" />
+                            <h2 className="text-2xl font-bold text-gray-900">4. Advertising</h2>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            The free version of Revive AI is supported by advertisements provided by <strong>Google AdMob</strong>. By using the App, you acknowledge and agree that advertisements may be displayed during your use of the service. Upgrading to <strong>Revive Pro</strong> removes all advertisements from the App.
+                        </p>
+                        <p className="text-gray-600 leading-relaxed">
+                            AdMob may collect certain information about your device and usage patterns to serve relevant ads. For more information about how Google handles your data, please review Google's Privacy Policy and AdMob's terms.
+                        </p>
+                    </section>
+
                     {/* Prohibited Conduct */}
                     <section className="mb-8">
                         <div className="flex items-center mb-4">
                             <Eye size={24} className="text-teal-600 mr-3" />
-                            <h2 className="text-2xl font-bold text-gray-900">4. Prohibited Conduct</h2>
+                            <h2 className="text-2xl font-bold text-gray-900">5. Prohibited Conduct</h2>
                         </div>
                         <p className="text-gray-600 leading-relaxed mb-4">
                             You agree not to use Revive AI to:
@@ -152,7 +166,7 @@ const ReviveTermsOfService = () => {
 
                     {/* Disclaimer of Warranties */}
                     <section className="mb-8">
-                        <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Disclaimer of Warranties</h2>
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Disclaimer of Warranties</h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
                             Revive AI relies on complex artificial intelligence algorithms. While we strive to produce the best possible results, we do not guarantee that the AI will perfectly restore every photo to your satisfaction. The App and its services are provided on an "AS IS" and "AS AVAILABLE" basis, without any warranties of any kind, whether express, implied, or statutory.
                         </p>
@@ -160,7 +174,7 @@ const ReviveTermsOfService = () => {
 
                     {/* Limitation of Liability */}
                     <section className="mb-8">
-                        <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Limitation of Liability</h2>
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Limitation of Liability</h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
                             To the maximum extent permitted by law, Digital Sprout shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues. We are not liable for any unauthorized access to our secure servers (Firebase) or any loss of user content resulting from circumstances beyond our control. Our total, aggregated liability regarding the App is limited to the amount you paid us for the Service, if any.
                         </p>
@@ -168,7 +182,7 @@ const ReviveTermsOfService = () => {
 
                     {/* Changes to Policy */}
                     <section className="mb-8">
-                        <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Changes to the Terms</h2>
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Changes to the Terms</h2>
                         <p className="text-gray-600 leading-relaxed">
                             We reserve the right to modify or replace these Terms at any time. If a revision is material, we will try our best to provide reasonable notice prior to any new terms taking effect. By continuing to access or use our App after those revisions become effective, you agree to be bound by the revised terms.
                         </p>
@@ -176,7 +190,7 @@ const ReviveTermsOfService = () => {
 
                     {/* Contact */}
                     <section className="mb-8">
-                        <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Contact Information</h2>
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Contact Information</h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
                             If you have questions or concerns regarding these Terms, please contact Digital Sprout via our main portal:
                         </p>

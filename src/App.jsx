@@ -43,6 +43,8 @@ import RevivePrivacyPolicy from "./components/RevivePrivacyPolicy";
 import ReviveTermsOfService from "./components/ReviveTermsOfService";
 import HoursTrackerPrivacyPolicy from "./components/HoursTrackerPrivacyPolicy";
 import HoursTrackerTermsOfService from "./components/HoursTrackerTermsOfService";
+import SoberTrackerPrivacyPolicy from "./components/SoberTrackerPrivacyPolicy";
+import SoberTrackerTermsOfService from "./components/SoberTrackerTermsOfService";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -822,6 +824,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/sobertracker/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    SoberTracker Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/sobertracker/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    SoberTracker Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -949,6 +967,14 @@ const App = () => {
         <Route
           path="/hourstracker/terms-of-service"
           element={<HoursTrackerTermsOfService />}
+        />
+        <Route
+          path="/sobertracker/privacy-policy"
+          element={<SoberTrackerPrivacyPolicy />}
+        />
+        <Route
+          path="/sobertracker/terms-of-service"
+          element={<SoberTrackerTermsOfService />}
         />
         <Route path="/support" element={<SupportPage />} />
       </Routes>

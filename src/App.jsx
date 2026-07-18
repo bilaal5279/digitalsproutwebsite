@@ -45,6 +45,7 @@ import HoursTrackerPrivacyPolicy from "./components/HoursTrackerPrivacyPolicy";
 import HoursTrackerTermsOfService from "./components/HoursTrackerTermsOfService";
 import SoberTrackerPrivacyPolicy from "./components/SoberTrackerPrivacyPolicy";
 import SoberTrackerTermsOfService from "./components/SoberTrackerTermsOfService";
+import { AskTarotPrivacyPolicy, AskTarotTermsOfService } from "./components/AskTarotLegal";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -840,6 +841,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/ask-tarot/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Ask Tarot Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/ask-tarot/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Ask Tarot Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -975,6 +992,18 @@ const App = () => {
         <Route
           path="/sobertracker/terms-of-service"
           element={<SoberTrackerTermsOfService />}
+        />
+        <Route
+          path="/ask-tarot/privacy-policy"
+          element={<AskTarotPrivacyPolicy />}
+        />
+        <Route
+          path="/ask-tarot/terms-of-service"
+          element={<AskTarotTermsOfService />}
+        />
+        <Route
+          path="/ask-tarot/terms"
+          element={<AskTarotTermsOfService />}
         />
         <Route path="/support" element={<SupportPage />} />
       </Routes>

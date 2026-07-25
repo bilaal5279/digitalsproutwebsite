@@ -46,6 +46,7 @@ import HoursTrackerTermsOfService from "./components/HoursTrackerTermsOfService"
 import SoberTrackerPrivacyPolicy from "./components/SoberTrackerPrivacyPolicy";
 import SoberTrackerTermsOfService from "./components/SoberTrackerTermsOfService";
 import { AskTarotPrivacyPolicy, AskTarotTermsOfService } from "./components/AskTarotLegal";
+import { PupTempoPrivacyPolicy, PupTempoTermsOfService } from "./components/PupTempoLegal";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -857,6 +858,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/puptempo/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    PupTempo Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/puptempo/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    PupTempo Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -1004,6 +1021,18 @@ const App = () => {
         <Route
           path="/ask-tarot/terms"
           element={<AskTarotTermsOfService />}
+        />
+        <Route
+          path="/puptempo/privacy-policy"
+          element={<PupTempoPrivacyPolicy />}
+        />
+        <Route
+          path="/puptempo/terms-of-service"
+          element={<PupTempoTermsOfService />}
+        />
+        <Route
+          path="/puptempo/terms"
+          element={<PupTempoTermsOfService />}
         />
         <Route path="/support" element={<SupportPage />} />
       </Routes>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   ArrowLeft,
   Bell,
@@ -36,55 +36,87 @@ const Section = ({ icon: Icon, title, children }) => (
   </section>
 );
 
-const LegalLayout = ({ title, subtitle, icon, children }) => (
-  <div className="min-h-screen bg-stone-50">
-    <nav className="bg-white shadow-md">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <a
-            href="/"
-            className="flex items-center text-gray-600 hover:text-teal-700 transition-colors"
-          >
-            <ArrowLeft size={20} className="mr-2" />
-            Back to Home
-          </a>
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-teal-700 to-amber-500" />
-            <div>
-              <span className="text-teal-700 font-bold text-xl">Digital</span>
-              <span className="text-purple-600 font-bold text-xl">sprout</span>
+const usePageMetadata = (title, subtitle) => {
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = `PupTempo ${title} | Digital Sprout`;
+
+    let meta = document.querySelector('meta[name="description"]');
+    const createdMeta = !meta;
+    if (createdMeta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    const previousDescription = meta.getAttribute("content");
+    meta.setAttribute("content", subtitle);
+
+    return () => {
+      document.title = previousTitle;
+      if (createdMeta) {
+        meta.remove();
+      } else if (previousDescription === null) {
+        meta.removeAttribute("content");
+      } else {
+        meta.setAttribute("content", previousDescription);
+      }
+    };
+  }, [title, subtitle]);
+};
+
+const LegalLayout = ({ title, subtitle, icon, children }) => {
+  usePageMetadata(title, subtitle);
+
+  return (
+    <div className="min-h-screen bg-stone-50">
+      <nav className="bg-white shadow-md">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <a
+              href="/"
+              className="flex items-center text-gray-600 hover:text-teal-700 transition-colors"
+            >
+              <ArrowLeft size={20} className="mr-2" />
+              Back to Home
+            </a>
+            <div className="flex items-center gap-2">
+              <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-teal-700 to-amber-500" />
+              <div>
+                <span className="text-teal-700 font-bold text-xl">Digital</span>
+                <span className="text-purple-600 font-bold text-xl">sprout</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <header className="bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex justify-center mb-4">
-          <div className="h-16 w-16 rounded-full bg-white/15 flex items-center justify-center">
-            {React.createElement(icon, {
-              size: 32,
-              className: "text-amber-300",
-            })}
+      <header className="bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex justify-center mb-4">
+            <div className="h-16 w-16 rounded-full bg-white/15 flex items-center justify-center">
+              {React.createElement(icon, {
+                size: 32,
+                className: "text-amber-300",
+              })}
+            </div>
           </div>
+          <h1 className="text-4xl font-bold text-white mb-4">{title}</h1>
+          <p className="text-xl text-teal-100 max-w-2xl mx-auto">PUPTEMPO</p>
+          <p className="text-teal-100/80 mt-2">{subtitle}</p>
+          <p className="text-teal-200/70 mt-2">
+            Effective Date: {effectiveDate}
+          </p>
         </div>
-        <h1 className="text-4xl font-bold text-white mb-4">{title}</h1>
-        <p className="text-xl text-teal-100 max-w-2xl mx-auto">PUPTEMPO</p>
-        <p className="text-teal-100/80 mt-2">{subtitle}</p>
-        <p className="text-teal-200/70 mt-2">
-          Effective Date: {effectiveDate}
-        </p>
-      </div>
-    </header>
+      </header>
 
-    <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <article className="bg-white rounded-xl shadow-lg p-8 md:p-12">
-        {children}
-      </article>
-    </main>
-  </div>
-);
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article className="bg-white rounded-xl shadow-lg p-8 md:p-12">
+          {children}
+        </article>
+      </main>
+    </div>
+  );
+};
 
 const ContactBlock = () => (
   <div className="bg-stone-50 rounded-lg p-5">

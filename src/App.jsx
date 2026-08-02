@@ -47,6 +47,7 @@ import SoberTrackerPrivacyPolicy from "./components/SoberTrackerPrivacyPolicy";
 import SoberTrackerTermsOfService from "./components/SoberTrackerTermsOfService";
 import { AskTarotPrivacyPolicy, AskTarotTermsOfService } from "./components/AskTarotLegal";
 import { PupTempoPrivacyPolicy, PupTempoTermsOfService } from "./components/PupTempoLegal";
+import { ThroughlinePrivacyPolicy, ThroughlineTermsOfService } from "./components/ThroughlineLegal";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -874,6 +875,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/throughline/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Throughline Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/throughline/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Throughline Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -1033,6 +1050,18 @@ const App = () => {
         <Route
           path="/puptempo/terms"
           element={<PupTempoTermsOfService />}
+        />
+        <Route
+          path="/throughline/privacy-policy"
+          element={<ThroughlinePrivacyPolicy />}
+        />
+        <Route
+          path="/throughline/terms-of-service"
+          element={<ThroughlineTermsOfService />}
+        />
+        <Route
+          path="/throughline/terms"
+          element={<ThroughlineTermsOfService />}
         />
         <Route path="/support" element={<SupportPage />} />
       </Routes>

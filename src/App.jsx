@@ -48,6 +48,7 @@ import SoberTrackerTermsOfService from "./components/SoberTrackerTermsOfService"
 import { AskTarotPrivacyPolicy, AskTarotTermsOfService } from "./components/AskTarotLegal";
 import { PupTempoPrivacyPolicy, PupTempoTermsOfService } from "./components/PupTempoLegal";
 import { ThroughlinePrivacyPolicy, ThroughlineTermsOfService } from "./components/ThroughlineLegal";
+import { OchePrivacyPolicy, OcheTermsOfService } from "./components/OcheLegal";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -891,6 +892,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <a
+                    href="/oche/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Oche Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/oche/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Oche Terms of Service
+                  </a>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -1063,6 +1080,10 @@ const App = () => {
           path="/throughline/terms"
           element={<ThroughlineTermsOfService />}
         />
+        <Route path="/oche/privacy-policy" element={<OchePrivacyPolicy />} />
+        <Route path="/oche/terms-of-service" element={<OcheTermsOfService />} />
+        <Route path="/oche/terms" element={<OcheTermsOfService />} />
+        <Route path="/oche/privacy" element={<OchePrivacyPolicy />} />
         <Route path="/support" element={<SupportPage />} />
       </Routes>
     </Router>

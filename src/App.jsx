@@ -49,6 +49,7 @@ import { AskTarotPrivacyPolicy, AskTarotTermsOfService } from "./components/AskT
 import { PupTempoPrivacyPolicy, PupTempoTermsOfService } from "./components/PupTempoLegal";
 import { ThroughlinePrivacyPolicy, ThroughlineTermsOfService } from "./components/ThroughlineLegal";
 import { OchePrivacyPolicy, OcheTermsOfService } from "./components/OcheLegal";
+import { LumaPrivacyPolicy, LumaTermsOfService } from "./components/LumaLegal";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -908,6 +909,22 @@ const HomePage = () => {
                   </a>
                 </li>
                 <li>
+                  <Link
+                    to="/luma/privacy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Luma Migraine Tracker Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/luma/terms"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Luma Migraine Tracker Terms of Service
+                  </Link>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -1084,6 +1101,12 @@ const App = () => {
         <Route path="/oche/terms-of-service" element={<OcheTermsOfService />} />
         <Route path="/oche/terms" element={<OcheTermsOfService />} />
         <Route path="/oche/privacy" element={<OchePrivacyPolicy />} />
+        <Route path="/luma/privacy" element={<LumaPrivacyPolicy />} />
+        <Route path="/luma/terms" element={<LumaTermsOfService />} />
+        <Route path="/luma/privacy-policy" element={<LumaPrivacyPolicy />} />
+        <Route path="/luma/terms-of-service" element={<LumaTermsOfService />} />
+        <Route path="/migraine-tracker/privacy" element={<LumaPrivacyPolicy />} />
+        <Route path="/migraine-tracker/terms" element={<LumaTermsOfService />} />
         <Route path="/support" element={<SupportPage />} />
       </Routes>
     </Router>

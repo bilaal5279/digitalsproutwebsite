@@ -50,6 +50,10 @@ import { PupTempoPrivacyPolicy, PupTempoTermsOfService } from "./components/PupT
 import { ThroughlinePrivacyPolicy, ThroughlineTermsOfService } from "./components/ThroughlineLegal";
 import { OchePrivacyPolicy, OcheTermsOfService } from "./components/OcheLegal";
 import { LumaPrivacyPolicy, LumaTermsOfService } from "./components/LumaLegal";
+import {
+  VocalRemoverPrivacyPolicy,
+  VocalRemoverTermsOfService,
+} from "./components/VocalRemoverLegal";
 import "./App.css";
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -925,6 +929,22 @@ const HomePage = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    to="/vocal-remover/privacy-policy"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Vocal Remover Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/vocal-remover/terms-of-service"
+                    className="text-gray-400 hover:text-teal-300 transition-colors"
+                  >
+                    Vocal Remover Terms of Service
+                  </Link>
+                </li>
+                <li>
                   <span className="text-gray-400">
                     More Legal Documents Coming Soon
                   </span>
@@ -1107,6 +1127,22 @@ const App = () => {
         <Route path="/luma/terms-of-service" element={<LumaTermsOfService />} />
         <Route path="/migraine-tracker/privacy" element={<LumaPrivacyPolicy />} />
         <Route path="/migraine-tracker/terms" element={<LumaTermsOfService />} />
+        <Route
+          path="/vocal-remover/privacy-policy"
+          element={<VocalRemoverPrivacyPolicy />}
+        />
+        <Route
+          path="/vocal-remover/terms-of-service"
+          element={<VocalRemoverTermsOfService />}
+        />
+        <Route
+          path="/vocal-remover/privacy"
+          element={<VocalRemoverPrivacyPolicy />}
+        />
+        <Route
+          path="/vocal-remover/terms"
+          element={<VocalRemoverTermsOfService />}
+        />
         <Route path="/support" element={<SupportPage />} />
       </Routes>
     </Router>

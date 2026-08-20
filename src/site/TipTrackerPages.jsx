@@ -121,8 +121,8 @@ export function TipTrackerPage() {
           <div className="ds-section-heading"><p className="ds-kicker">Simple options</p><h2>Choose the fit that works.</h2><p>Final price and currency are always shown by Apple before you buy.</p></div>
           <div className="tm-pricing__grid">
             <article><small>Monthly</small><strong>$2.99 <span>/ month</span></strong><p>Flexible access, billed monthly through Apple.</p></article>
-            <article className="tm-pricing__featured"><span className="tm-pricing__badge">7-day free trial</span><small>Annual</small><strong>$19.99 <span>/ year</span></strong><p>Full premium access with the best recurring value.</p></article>
-            <article><small>Lifetime</small><strong>$49.99 <span>once</span></strong><p>A one-time purchase for ongoing premium access.</p></article>
+            <article className="tm-pricing__featured"><span className="tm-pricing__badge">Trial if eligible</span><small>Annual</small><strong>$19.99 <span>/ year</span></strong><p>Eligible new subscribers may receive a 7-day trial where offered.</p></article>
+            <article><small>Lifetime</small><strong>$49.99 <span>once</span></strong><p>One-time Pro access for the commercial life of the app; terms apply.</p></article>
           </div>
           <p className="tm-pricing__fine">Prices shown in USD and may vary by storefront, currency, tax, or Apple pricing changes. Subscriptions renew automatically unless cancelled through Apple.</p>
         </div>

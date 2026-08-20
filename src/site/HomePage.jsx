@@ -120,7 +120,7 @@ export default function HomePage() {
               <div className="ds-feature-card__icon ds-feature-card__icon--coral"><FileSpreadsheet size={24} aria-hidden="true" /></div>
               <span className="ds-card-number">02</span>
               <h3>Your records, portable</h3>
-              <p>Export your shift history as CSV whenever you want a personal backup or a deeper look.</p>
+              <p>Export a spreadsheet or create a portable JSON backup whenever you want a copy under your control.</p>
             </article>
             <article className="ds-feature-card ds-feature-card--dark">
               <div className="ds-feature-card__icon ds-feature-card__icon--light"><LockKeyhole size={24} aria-hidden="true" /></div>

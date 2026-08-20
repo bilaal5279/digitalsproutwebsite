@@ -46,7 +46,7 @@ export function TipTrackerPage() {
   const features = [
     { icon: Clock3, title: "Log the shift", copy: "Record your hours and tip totals in a flow designed for the end of a busy service." },
     { icon: CircleDollarSign, title: "See the pattern", copy: "Review useful totals and rates across your shift history without building a spreadsheet." },
-    { icon: FileDown, title: "Take it with you", copy: "Export records as CSV for your own backup, budgeting, or review." },
+    { icon: FileDown, title: "Take it with you", copy: "Export records as CSV, create a JSON backup, or prepare a formatted Pro report." },
     { icon: ShieldCheck, title: "Keep it yours", copy: "Shift data lives on your device. There is no TipMint account, advertising, or behavioural tracking." },
   ];
 
@@ -54,7 +54,7 @@ export function TipTrackerPage() {
     <SitePage>
       <PageMeta
         title="TipMint — Tip tracker for servers and hospitality workers"
-        description="Track shifts, tips, hours, and useful earnings totals on iPhone. TipMint keeps shift data on-device, requires no account, and supports CSV export."
+        description="Track shifts, tips, hours, and useful earnings totals on iPhone. TipMint keeps shift data on-device, requires no account, and supports portable exports."
         path="/tip-tracker"
       />
 
@@ -178,7 +178,7 @@ export function TipTrackerPrivacyPolicy() {
       <p className="legal-intro">This Privacy Policy explains how DigitalSprout Ltd (“we”, “us”, or “our”), a company registered in the United Kingdom, handles information when you use the TipMint iOS app (“TipMint” or the “App”). DigitalSprout Ltd is the controller for personal information described in this policy.</p>
 
       <LegalSection number="01" title="The short version">
-        <ul><li>Your shift records are stored locally on your device.</li><li>You do not need to create a TipMint account.</li><li>Optional Face ID access is handled by iOS; TipMint receives only the authentication result.</li><li>We do not run ads or track you across apps or websites.</li><li>RevenueCat helps validate purchases; Apple handles payment and billing.</li><li>You control when and where a CSV export is saved or shared.</li></ul>
+        <ul><li>Your shift records are stored locally on your device.</li><li>You do not need to create a TipMint account.</li><li>Optional Face ID access is handled by iOS; TipMint receives only the authentication result.</li><li>We do not run ads or track you across apps or websites.</li><li>RevenueCat helps validate purchases; Apple handles payment and billing.</li><li>You control when and where an export, backup, or report is saved or shared.</li></ul>
       </LegalSection>
 
       <LegalSection number="02" title="Information stored on your device">
@@ -198,8 +198,9 @@ export function TipTrackerPrivacyPolicy() {
         <p>Apple may make diagnostics available if you separately choose to share analytics with Apple and developers in your device settings. That platform-level choice is controlled by you and Apple.</p>
       </LegalSection>
 
-      <LegalSection number="05" title="CSV exports">
-        <p>TipMint lets you create a CSV copy of your records. The export happens only when you choose it. Once you save or share an export outside TipMint, its security and retention depend on the destination you selected—for example Files, email, cloud storage, or another app. Delete exported copies separately when you no longer need them.</p>
+      <LegalSection number="05" title="Exports, backups, and reports">
+        <p>TipMint lets you create a CSV spreadsheet, a JSON backup that can be restored in the App, and, with TipMint Pro, a formatted PDF report. These files are created only when you choose the relevant action.</p>
+        <p>Once you save or share a file outside TipMint, its security and retention depend on the destination you selected—for example Files, email, cloud storage, or another app. Delete exported copies, backups, and reports separately when you no longer need them.</p>
       </LegalSection>
 
       <LegalSection number="06" title="Why information is processed">
@@ -270,7 +271,7 @@ export function TipTrackerTermsOfService() {
       </LegalSection>
 
       <LegalSection number="06" title="Your data and exports">
-        <p>Your shift records are stored locally on your device. You are responsible for the accuracy of entries, maintaining any backups you need, and protecting CSV exports after they leave the App. We are not responsible for loss caused by deletion, device loss, failed backups, third-party storage, or sharing an export with the wrong recipient.</p>
+        <p>Your shift records are stored locally on your device. You are responsible for the accuracy of entries, maintaining any backups you need, and protecting CSV exports, JSON backups, and PDF reports after they leave the App. We are not responsible for loss caused by deletion, device loss, failed backups, third-party storage, or sharing a file with the wrong recipient.</p>
         <p>Our handling of information is explained in the <Link to="/tip-tracker/privacy-policy">TipMint Privacy Policy</Link>.</p>
       </LegalSection>
 
@@ -307,14 +308,14 @@ export function TipTrackerSupport() {
   const faqs = [
     { q: "How do I restore a purchase?", a: "Open TipMint’s purchase screen and choose Restore Purchases while signed in to the Apple account that made the purchase. If access does not return, email us with the product you bought—never send full payment details." },
     { q: "How do I cancel a subscription?", a: "Subscriptions are managed by Apple. On iPhone, open Settings, tap your name, choose Subscriptions, select TipMint, and follow Apple’s cancellation options. Deleting the App does not cancel a subscription." },
-    { q: "Where is my shift data?", a: "TipMint stores shift records locally on your device. We cannot view or recover them from a server. Use CSV export when you want a portable copy, and protect that file wherever you save it." },
-    { q: "How do I delete my data?", a: "Delete individual records using the controls in TipMint. Removing the App normally removes its local data, although device backups and CSV files you created must be managed separately." },
+    { q: "Where is my shift data?", a: "TipMint stores shift records locally on your device. We cannot view or recover them from a server. Use a JSON backup when you want a restorable copy or CSV for a spreadsheet, and protect those files wherever you save them." },
+    { q: "How do I delete my data?", a: "Delete individual records using the controls in TipMint. Removing the App normally removes its local data, although device backups, JSON backups, CSV exports, and PDF reports you created must be managed separately." },
     { q: "Why does my total differ from payroll?", a: "TipMint uses the information you enter and is not an official payroll or tax system. Check your entries and compare them with employer records or professional advice." },
   ];
 
   return (
     <SitePage>
-      <PageMeta title="TipMint Support — Help with shifts and purchases" description="Get help with TipMint, including purchase restoration, subscription cancellation, local shift data, CSV exports, and calculation questions." path="/tip-tracker/support" />
+      <PageMeta title="TipMint Support — Help with shifts and purchases" description="Get help with TipMint, including purchase restoration, subscription cancellation, local shift data, backups, exports, and calculation questions." path="/tip-tracker/support" />
       <section className="support-hero">
         <div className="ds-shell support-hero__inner">
           <div><p className="ds-eyebrow ds-eyebrow--mint"><HelpCircle size={15} /> TipMint support</p><h1>Let’s get you<br /><em>back on shift.</em></h1><p>Clear answers for common questions, plus a direct line to the small team making TipMint.</p></div>

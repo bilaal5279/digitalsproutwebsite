@@ -188,7 +188,7 @@ export function TipTrackerPrivacyPolicy() {
       </LegalSection>
 
       <LegalSection number="03" title="Purchases and premium access">
-        <p>When you view, buy, restore, or use a premium entitlement, RevenueCat may process a pseudonymous app-user identifier, product identifiers, transaction or receipt information supplied by Apple, entitlement status, and limited technical information needed to provide purchase access.</p>
+        <p>In configured iOS builds, RevenueCat initializes when TipMint launches so the App can check premium access. This can happen whether or not you have purchased TipMint Pro. RevenueCat may process a pseudonymous app-user identifier, product identifiers, transaction or receipt information supplied by Apple, entitlement status, and limited technical information needed to provide purchase access, including when you view, buy, restore, or use a premium entitlement.</p>
         <p>Apple processes the purchase itself. We do not receive your full payment-card or bank details. RevenueCat and Apple handle their information under their own policies:</p>
         <ul><li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noreferrer">RevenueCat Privacy Policy</a></li><li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noreferrer">Apple Privacy Policy</a></li></ul>
       </LegalSection>

@@ -16,7 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import { PageMeta, SitePage } from "./SiteChrome";
 
-const EFFECTIVE_DATE = "20 August 2026";
+const EFFECTIVE_DATE = "22 August 2026";
 
 function ProductHeroArt() {
   return (
@@ -54,14 +54,14 @@ export function TipTrackerPage() {
     <SitePage>
       <PageMeta
         title="TipMint — Tip tracker for servers and hospitality workers"
-        description="Track shifts, tips, hours, and useful earnings totals on iPhone. TipMint keeps shift data on-device, requires no account, and supports portable exports."
+        description="Track shifts, tips, hours, and useful earnings totals on iPhone and Android. TipMint keeps shift data on-device, requires no account, and supports portable exports."
         path="/tip-tracker"
       />
 
       <section className="tm-product-hero">
         <div className="ds-shell tm-product-hero__grid">
           <div>
-            <p className="ds-eyebrow ds-eyebrow--mint"><Sparkles size={15} /> Tip tracker for iPhone</p>
+            <p className="ds-eyebrow ds-eyebrow--mint"><Sparkles size={15} /> Tip tracker for iPhone &amp; Android</p>
             <div className="tm-product-identity"><img src="/assets/tipmint-icon.png" alt="TipMint app icon" /><span>TIPMINT</span></div>
             <h1>Own the shift.<br /><em>Know the total.</em></h1>
             <p>TipMint is the calm, private shift companion for servers and hospitality workers who want a clearer view of their tip income.</p>
@@ -69,7 +69,7 @@ export function TipTrackerPage() {
               <a className="ds-button ds-button--mint" href="mailto:info@digitalsprout.org?subject=TipMint%20launch%20updates">Get launch updates <ArrowRight size={17} /></a>
               <a className="ds-text-link ds-text-link--light" href="#features">See how it works</a>
             </div>
-            <small className="tm-launch-note">App Store launch in progress · No marketing list or account required</small>
+            <small className="tm-launch-note">App Store &amp; Google Play launch in progress · No marketing list or account required</small>
           </div>
           <ProductHeroArt />
         </div>
@@ -109,8 +109,8 @@ export function TipTrackerPage() {
           <div className="tm-privacy-orbit" aria-hidden="true"><LockKeyhole size={58} /><span /><span /><span /></div>
           <div>
             <p className="ds-kicker ds-kicker--light">Privacy without detective work</p>
-            <h2>Your shift history stays on your iPhone.</h2>
-            <p>TipMint does not create an account, serve ads, or track your activity across apps. RevenueCat receives pseudonymous purchase identifiers and entitlement status to unlock premium access; Apple handles all billing.</p>
+            <h2>Your shift history stays on your device.</h2>
+            <p>TipMint does not create an account, serve ads, or track your activity across apps. RevenueCat receives pseudonymous purchase identifiers and entitlement status to unlock premium access; Apple or Google Play handles billing.</p>
             <Link className="ds-text-link ds-text-link--light" to="/tip-tracker/privacy-policy">Read the plain-language privacy policy <ArrowRight size={16} /></Link>
           </div>
         </div>
@@ -118,13 +118,13 @@ export function TipTrackerPage() {
 
       <section className="ds-section tm-pricing">
         <div className="ds-shell">
-          <div className="ds-section-heading"><p className="ds-kicker">Simple options</p><h2>Choose the fit that works.</h2><p>Final price and currency are always shown by Apple before you buy.</p></div>
+          <div className="ds-section-heading"><p className="ds-kicker">Simple options</p><h2>Choose the fit that works.</h2><p>Final price and currency are always shown by your app store before you buy.</p></div>
           <div className="tm-pricing__grid">
-            <article><small>Monthly</small><strong>$2.99 <span>/ month</span></strong><p>Flexible access, billed monthly through Apple.</p></article>
+            <article><small>Monthly</small><strong>$2.99 <span>/ month</span></strong><p>Flexible access, billed monthly through your app store.</p></article>
             <article className="tm-pricing__featured"><span className="tm-pricing__badge">Trial if eligible</span><small>Annual</small><strong>$19.99 <span>/ year</span></strong><p>Eligible new subscribers may receive a 7-day trial where offered.</p></article>
             <article><small>Lifetime</small><strong>$49.99 <span>once</span></strong><p>One-time Pro access for the commercial life of the app; terms apply.</p></article>
           </div>
-          <p className="tm-pricing__fine">Prices shown in USD and may vary by storefront, currency, tax, or Apple pricing changes. Subscriptions renew automatically unless cancelled through Apple.</p>
+          <p className="tm-pricing__fine">Prices shown in USD and may vary by storefront, currency, tax, or store pricing changes. Subscriptions renew automatically unless cancelled through Apple or Google Play.</p>
         </div>
       </section>
 
@@ -173,29 +173,29 @@ export function TipTrackerPrivacyPolicy() {
     <TipMintLegalLayout
       kind="privacy"
       title="Privacy Policy"
-      description="Your shift data stays on your device. TipMint has no account, ads, or behavioural tracking. Purchase access is handled by RevenueCat and Apple."
+      description="Your shift data stays on your device. TipMint has no account, ads, or behavioural tracking. Purchase access is handled by RevenueCat and your app store."
     >
-      <p className="legal-intro">This Privacy Policy explains how DigitalSprout Ltd (“we”, “us”, or “our”), a company registered in the United Kingdom, handles information when you use the TipMint iOS app (“TipMint” or the “App”). DigitalSprout Ltd is the controller for personal information described in this policy.</p>
+      <p className="legal-intro">This Privacy Policy explains how DigitalSprout Ltd (“we”, “us”, or “our”), a company registered in the United Kingdom, handles information when you use the TipMint iOS or Android app (“TipMint” or the “App”). DigitalSprout Ltd is the controller for personal information described in this policy.</p>
 
       <LegalSection number="01" title="The short version">
-        <ul><li>Your shift records are stored locally on your device.</li><li>You do not need to create a TipMint account.</li><li>Optional Face ID access is handled by iOS; TipMint receives only the authentication result.</li><li>We do not run ads or track you across apps or websites.</li><li>RevenueCat helps validate purchases; Apple handles payment and billing.</li><li>You control when and where an export, backup, or report is saved or shared.</li></ul>
+        <ul><li>Your shift records are stored locally on your device.</li><li>You do not need to create a TipMint account.</li><li>Optional Face ID, fingerprint, or other biometric access is handled by your operating system; TipMint receives only the authentication result.</li><li>We do not run ads or track you across apps or websites.</li><li>RevenueCat helps validate purchases; Apple or Google Play handles payment and billing.</li><li>You control when and where an export, backup, or report is saved or shared.</li></ul>
       </LegalSection>
 
       <LegalSection number="02" title="Information stored on your device">
         <p>TipMint stores the shift information you choose to enter—such as hours, tip amounts, dates, and related app settings—locally on your device. We do not operate a server that receives or stores this shift history.</p>
-        <p>You can edit or delete records in the App. Removing the App normally removes its locally stored data, subject to your device backups and Apple’s operating-system behaviour.</p>
-        <p>If you choose to protect TipMint with Face ID, authentication is performed by iOS using Apple’s system security. TipMint receives only a success or failure response. We do not receive, access, or store your face image, Face ID data, or biometric template.</p>
+        <p>You can edit or delete records in the App. Removing the App normally removes its locally stored data, subject to device backups and your operating system’s behaviour.</p>
+        <p>If you choose to protect TipMint with Face ID, fingerprint, or another supported biometric, authentication is performed by iOS or Android using the device’s system security. TipMint receives only a success or failure response. We do not receive, access, or store your face image, fingerprint, Face ID data, or biometric template.</p>
       </LegalSection>
 
       <LegalSection number="03" title="Purchases and premium access">
-        <p>In configured iOS builds, RevenueCat initializes when TipMint launches so the App can check premium access. This can happen whether or not you have purchased TipMint Pro. RevenueCat may process a pseudonymous app-user identifier, product identifiers, transaction or receipt information supplied by Apple, entitlement status, and limited technical information needed to provide purchase access, including when you view, buy, restore, or use a premium entitlement.</p>
-        <p>Apple processes the purchase itself. We do not receive your full payment-card or bank details. RevenueCat and Apple handle their information under their own policies:</p>
-        <ul><li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noreferrer">RevenueCat Privacy Policy</a></li><li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noreferrer">Apple Privacy Policy</a></li></ul>
+        <p>In configured iOS and Android builds, RevenueCat initializes when TipMint launches so the App can check premium access. This can happen whether or not you have purchased TipMint Pro. RevenueCat may process a pseudonymous app-user identifier, product identifiers, transaction or receipt information supplied by Apple or Google Play, entitlement status, and limited technical information needed to provide purchase access, including when you view, buy, restore, or use a premium entitlement.</p>
+        <p>Apple or Google Play processes the purchase itself. We do not receive your full payment-card or bank details. RevenueCat and the applicable store handle their information under their own policies:</p>
+        <ul><li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noreferrer">RevenueCat Privacy Policy</a></li><li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noreferrer">Apple Privacy Policy</a></li><li><a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google Privacy Policy</a></li></ul>
       </LegalSection>
 
       <LegalSection number="04" title="No advertising or behavioural tracking">
         <p>TipMint does not include third-party advertising, sell personal information, or use data to track you across other companies’ apps and websites. We do not use your shift history for marketing or profiling.</p>
-        <p>Apple may make diagnostics available if you separately choose to share analytics with Apple and developers in your device settings. That platform-level choice is controlled by you and Apple.</p>
+        <p>Apple or Google may make diagnostics available if you separately choose to share platform analytics with developers in your device settings. That choice is controlled by you and the platform provider.</p>
       </LegalSection>
 
       <LegalSection number="05" title="Exports, backups, and reports">
@@ -208,11 +208,11 @@ export function TipTrackerPrivacyPolicy() {
       </LegalSection>
 
       <LegalSection number="07" title="Sharing and international processing">
-        <p>We do not share your shift history because we do not receive it. Purchase-related information is processed by Apple and RevenueCat as described above. These providers may process information outside the UK; their policies describe the legal safeguards they use for international transfers.</p>
+        <p>We do not share your shift history because we do not receive it. Purchase-related information is processed by RevenueCat and Apple or Google Play as described above. These providers may process information outside the UK; their policies describe the legal safeguards they use for international transfers.</p>
       </LegalSection>
 
       <LegalSection number="08" title="Retention and deletion">
-        <p>On-device records remain until you delete them or remove the App, subject to device backups. RevenueCat and Apple retain purchase information according to their policies and legal duties. Emails you send us may be retained while we handle your request and for a reasonable period afterward for support and record-keeping.</p>
+        <p>On-device records remain until you delete them or remove the App, subject to device backups. RevenueCat and the applicable app store retain purchase information according to their policies and legal duties. Emails you send us may be retained while we handle your request and for a reasonable period afterward for support and record-keeping.</p>
       </LegalSection>
 
       <LegalSection number="09" title="Security">
@@ -243,10 +243,10 @@ export function TipTrackerTermsOfService() {
       title="Terms of Service"
       description="These terms explain the TipMint licence, subscriptions and lifetime purchase, acceptable use, calculation limitations, and your consumer rights."
     >
-      <p className="legal-intro">These Terms of Service (“Terms”) form an agreement between you and DigitalSprout Ltd (“we”, “us”, or “our”), a company registered in the United Kingdom, for your use of the TipMint iOS app (“TipMint” or the “App”). By downloading, purchasing, or using TipMint, you agree to these Terms.</p>
+      <p className="legal-intro">These Terms of Service (“Terms”) form an agreement between you and DigitalSprout Ltd (“we”, “us”, or “our”), a company registered in the United Kingdom, for your use of the TipMint iOS or Android app (“TipMint” or the “App”). By downloading, purchasing, or using TipMint, you agree to these Terms.</p>
 
       <LegalSection number="01" title="App licence and eligibility">
-        <p>We give you a personal, limited, non-exclusive, non-transferable, revocable licence to use TipMint on Apple devices you own or control, subject to these Terms and Apple’s applicable rules. You must be legally able to enter this agreement. If you use TipMint for work, you remain responsible for following your employer’s policies and applicable laws.</p>
+        <p>We give you a personal, limited, non-exclusive, non-transferable, revocable licence to use TipMint on supported Apple or Android devices you own or control, subject to these Terms and the applicable store rules. You must be legally able to enter this agreement. If you use TipMint for work, you remain responsible for following your employer’s policies and applicable laws.</p>
       </LegalSection>
 
       <LegalSection number="02" title="What TipMint does">
@@ -260,14 +260,14 @@ export function TipTrackerTermsOfService() {
 
       <LegalSection number="04" title="Subscriptions and purchases">
         <p>TipMint may offer these premium options:</p>
-        <ul><li><strong>Monthly:</strong> $2.99 per month.</li><li><strong>Annual:</strong> $19.99 per year, with a 7-day free trial when shown as eligible by Apple.</li><li><strong>Lifetime:</strong> $49.99 as a one-time purchase.</li></ul>
-        <p>These are reference prices in US dollars. The price, currency, tax, trial eligibility, and exact offer shown by Apple before confirmation control your purchase and may vary by country, storefront, or later pricing change.</p>
-        <p>Monthly and annual subscriptions renew automatically through Apple unless cancelled in your Apple subscription settings before renewal. If you begin an eligible trial and do not cancel before it ends, Apple will charge the displayed subscription price. Apple’s purchase screen and terms control the exact billing and cancellation timing.</p>
+        <ul><li><strong>Monthly:</strong> $2.99 per month.</li><li><strong>Annual:</strong> $19.99 per year, with a 7-day free trial when shown as eligible by the applicable store.</li><li><strong>Lifetime:</strong> $49.99 as a one-time purchase.</li></ul>
+        <p>These are reference prices in US dollars. The price, currency, tax, trial eligibility, and exact offer shown by Apple or Google Play before confirmation control your purchase and may vary by country, storefront, or later pricing change.</p>
+        <p>Monthly and annual subscriptions renew automatically through the store where you bought them unless cancelled in that store’s subscription settings before renewal. If you begin an eligible trial and do not cancel before it ends, the applicable store will charge the displayed subscription price. Its purchase screen and terms control the exact billing and cancellation timing.</p>
       </LegalSection>
 
       <LegalSection number="05" title="Lifetime access, restoration, and refunds">
-        <p>A lifetime purchase provides access to the premium TipMint features offered under that entitlement for the commercial lifetime of the App. It is associated with the Apple account used to buy it, is not transferable, and does not guarantee that every future feature or separate product will be included forever.</p>
-        <p>You can use Restore Purchases in TipMint to ask Apple and RevenueCat to restore an eligible entitlement. Apple controls billing and refunds. Refund requests must be made through Apple and remain subject to Apple’s rules and any mandatory consumer rights.</p>
+        <p>A lifetime purchase provides access to the premium TipMint features offered under that entitlement for the commercial lifetime of the App. It is associated with the Apple or Google account used to buy it, is not transferable between stores, and does not guarantee that every future feature or separate product will be included forever.</p>
+        <p>You can use Restore Purchases in TipMint to ask RevenueCat and the applicable store to restore an eligible entitlement. Apple or Google Play controls billing and refunds. Refund requests must be made through the store where you bought TipMint and remain subject to its rules and any mandatory consumer rights.</p>
       </LegalSection>
 
       <LegalSection number="06" title="Your data and exports">
@@ -292,8 +292,8 @@ export function TipTrackerTermsOfService() {
         <p>Nothing in these Terms excludes liability that cannot lawfully be excluded, including liability for death or personal injury caused by negligence, fraud, or your mandatory consumer rights. If you are a consumer, you retain all protections provided by applicable law.</p>
       </LegalSection>
 
-      <LegalSection number="11" title="Apple terms">
-        <p>Your use of TipMint is also subject to the applicable Apple Media Services terms and App Store licence terms. Apple is not responsible for providing TipMint support. Where required by Apple’s standard end-user licence agreement, Apple and its subsidiaries may enforce relevant provisions as third-party beneficiaries.</p>
+      <LegalSection number="11" title="App store terms">
+        <p>Your use of TipMint is also subject to the applicable Apple Media Services or Google Play terms. Neither Apple nor Google is responsible for providing TipMint support. Where required by Apple’s standard end-user licence agreement, Apple and its subsidiaries may enforce relevant provisions as third-party beneficiaries.</p>
       </LegalSection>
 
       <LegalSection number="12" title="Law, changes, and contact">
@@ -306,8 +306,8 @@ export function TipTrackerTermsOfService() {
 
 export function TipTrackerSupport() {
   const faqs = [
-    { q: "How do I restore a purchase?", a: "Open TipMint’s purchase screen and choose Restore Purchases while signed in to the Apple account that made the purchase. If access does not return, email us with the product you bought—never send full payment details." },
-    { q: "How do I cancel a subscription?", a: "Subscriptions are managed by Apple. On iPhone, open Settings, tap your name, choose Subscriptions, select TipMint, and follow Apple’s cancellation options. Deleting the App does not cancel a subscription." },
+    { q: "How do I restore a purchase?", a: "Open TipMint’s purchase screen and choose Restore Purchases while signed in to the Apple or Google account that made the purchase. If access does not return, email us with the product you bought—never send full payment details." },
+    { q: "How do I cancel a subscription?", a: "Subscriptions are managed by the store where you bought them. On iPhone, use Apple Account > Subscriptions. On Android, use Google Play > Payments & subscriptions > Subscriptions. Deleting the App does not cancel a subscription." },
     { q: "Where is my shift data?", a: "TipMint stores shift records locally on your device. We cannot view or recover them from a server. Use a JSON backup when you want a restorable copy or CSV for a spreadsheet, and protect those files wherever you save them." },
     { q: "How do I delete my data?", a: "Delete individual records using the controls in TipMint. Removing the App normally removes its local data, although device backups, JSON backups, CSV exports, and PDF reports you created must be managed separately." },
     { q: "Why does my total differ from payroll?", a: "TipMint uses the information you enter and is not an official payroll or tax system. Check your entries and compare them with employer records or professional advice." },
@@ -319,7 +319,7 @@ export function TipTrackerSupport() {
       <section className="support-hero">
         <div className="ds-shell support-hero__inner">
           <div><p className="ds-eyebrow ds-eyebrow--mint"><HelpCircle size={15} /> TipMint support</p><h1>Let’s get you<br /><em>back on shift.</em></h1><p>Clear answers for common questions, plus a direct line to the small team making TipMint.</p></div>
-          <div className="support-contact-card"><img src="/assets/tipmint-icon.png" alt="TipMint app icon" /><small>Email support</small><h2>Tell us what happened.</h2><p>Include your iPhone model, iOS version, TipMint version, and the steps that led to the issue. Please do not send payment-card details or sensitive workplace records.</p><a className="ds-button ds-button--mint" href="mailto:info@digitalsprout.org?subject=TipMint%20Support">Email info@digitalsprout.org <Mail size={16} /></a></div>
+          <div className="support-contact-card"><img src="/assets/tipmint-icon.png" alt="TipMint app icon" /><small>Email support</small><h2>Tell us what happened.</h2><p>Include your device model, iOS or Android version, TipMint version, and the steps that led to the issue. Please do not send payment-card details or sensitive workplace records.</p><a className="ds-button ds-button--mint" href="mailto:info@digitalsprout.org?subject=TipMint%20Support">Email info@digitalsprout.org <Mail size={16} /></a></div>
         </div>
       </section>
       <section className="ds-section support-faq">

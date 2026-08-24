@@ -21,12 +21,21 @@ describe('public routes', () => {
   test('renders the TipMint product page', async () => {
     renderAt('/tip-tracker');
     expect(await screen.findByRole('heading', { name: /own the shift.*know the total/i })).toBeInTheDocument();
+    expect(screen.getAllByText(/estimated earnings/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/net tips/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/does not calculate taxes or payroll deductions/i)).toBeInTheDocument();
   });
 
   test('renders TipMint privacy and legal facts', async () => {
     renderAt('/tip-tracker/privacy-policy');
     expect(await screen.findByRole('heading', { name: 'Privacy Policy' })).toBeInTheDocument();
     expect(screen.getByText(/shift records are stored locally on your device/i)).toBeInTheDocument();
+  });
+
+  test('states the TipMint calculation limitation in its terms', async () => {
+    renderAt('/tip-tracker/terms-of-service');
+    expect(await screen.findByRole('heading', { name: 'Terms of Service' })).toBeInTheDocument();
+    expect(screen.getByText(/does not calculate taxes or payroll deductions/i)).toBeInTheDocument();
   });
 
   test('renders dedicated TipMint support', async () => {

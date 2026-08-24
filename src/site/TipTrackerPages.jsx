@@ -16,7 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import { PageMeta, SitePage } from "./SiteChrome";
 
-const EFFECTIVE_DATE = "22 August 2026";
+const EFFECTIVE_DATE = "24 August 2026";
 
 function ProductHeroArt() {
   return (
@@ -28,11 +28,11 @@ function ProductHeroArt() {
           <div><small>TIPMINT</small><strong>Shift complete</strong></div>
           <span><Check size={16} aria-hidden="true" /></span>
         </div>
-        <div className="tm-product-card__total"><small>Total tips</small><strong>$186.50</strong><span>+$32.50 vs shift average</span></div>
+        <div className="tm-product-card__total"><small>Estimated earnings</small><strong>$284.60</strong><span>Net tips $221.50 · Wages $63.10</span></div>
         <dl>
-          <div><dt>Hours</dt><dd>6h 42m</dd></div>
-          <div><dt>Tip rate</dt><dd>$27.84/hr</dd></div>
-          <div><dt>Cash</dt><dd>$74.00</dd></div>
+          <div><dt>Hours</dt><dd>7h 20m</dd></div>
+          <div><dt>Net tips</dt><dd>$221.50</dd></div>
+          <div><dt>True hourly</dt><dd>$38.81</dd></div>
         </dl>
         <div className="tm-product-card__action"><span>Save shift</span><ArrowRight size={17} /></div>
       </div>
@@ -45,7 +45,7 @@ function ProductHeroArt() {
 export function TipTrackerPage() {
   const features = [
     { icon: Clock3, title: "Log the shift", copy: "Record your hours and tip totals in a flow designed for the end of a busy service." },
-    { icon: CircleDollarSign, title: "See the pattern", copy: "Review useful totals and rates across your shift history without building a spreadsheet." },
+    { icon: CircleDollarSign, title: "See the pattern", copy: "Review estimated earnings, net tips, and rates across your shift history without building a spreadsheet." },
     { icon: FileDown, title: "Take it with you", copy: "Export records as CSV, create a JSON backup, or prepare a formatted Pro report." },
     { icon: ShieldCheck, title: "Keep it yours", copy: "Shift data lives on your device. There is no TipMint account, advertising, or behavioural tracking." },
   ];
@@ -54,7 +54,7 @@ export function TipTrackerPage() {
     <SitePage>
       <PageMeta
         title="TipMint — Tip tracker for servers and hospitality workers"
-        description="Track shifts, tips, hours, and useful earnings totals on iPhone and Android. TipMint keeps shift data on-device, requires no account, and supports portable exports."
+        description="Track shifts, tips and hours, then see net tips and estimated earnings on iPhone and Android. TipMint keeps shift data on-device and requires no account."
         path="/tip-tracker"
       />
 
@@ -64,7 +64,7 @@ export function TipTrackerPage() {
             <p className="ds-eyebrow ds-eyebrow--mint"><Sparkles size={15} /> Tip tracker for iPhone &amp; Android</p>
             <div className="tm-product-identity"><img src="/assets/tipmint-icon.png" alt="TipMint app icon" /><span>TIPMINT</span></div>
             <h1>Own the shift.<br /><em>Know the total.</em></h1>
-            <p>TipMint is the calm, private shift companion for servers and hospitality workers who want a clearer view of their tip income.</p>
+            <p>TipMint is the calm, private shift companion for servers and hospitality workers who want a clearer view of net tips and estimated earnings.</p>
             <div className="ds-actions">
               <a className="ds-button ds-button--mint" href="mailto:info@digitalsprout.org?subject=TipMint%20launch%20updates">Get launch updates <ArrowRight size={17} /></a>
               <a className="ds-text-link ds-text-link--light" href="#features">See how it works</a>
@@ -100,7 +100,7 @@ export function TipTrackerPage() {
               </article>
             ))}
           </div>
-          <p className="tm-calculation-note">TipMint calculations are organisational estimates for your personal records, not payroll, tax, accounting, or legal advice. Always verify official pay records independently.</p>
+          <p className="tm-calculation-note">Estimated earnings use the shift details you enter. TipMint does not calculate taxes or payroll deductions and is not tax advice. Always verify official pay records.</p>
         </div>
       </section>
 
@@ -254,7 +254,7 @@ export function TipTrackerTermsOfService() {
       </LegalSection>
 
       <LegalSection number="03" title="Important calculation disclaimer">
-        <p><strong>TipMint is an organisational tool, not a payroll system.</strong> It does not provide tax, accounting, employment, financial, or legal advice and does not determine wages or legal tip entitlement. Results may be incomplete or inaccurate if entries are incomplete, laws differ, rounding occurs, or workplace rules apply.</p>
+        <p><strong>TipMint is an organisational recordkeeping tool, not payroll or tax software.</strong> It does not calculate taxes or payroll deductions and is not tax advice. Estimated earnings are based on information you enter and may be incomplete or inaccurate if entries are incomplete, laws differ, rounding occurs, or workplace rules apply. TipMint does not determine wages or legal tip entitlement.</p>
         <p>Always compare TipMint records with official payslips, employer records, bank deposits, and professional advice where appropriate. You are responsible for tax reporting and compliance with workplace or tip-sharing requirements.</p>
       </LegalSection>
 
@@ -288,7 +288,7 @@ export function TipTrackerTermsOfService() {
       </LegalSection>
 
       <LegalSection number="10" title="Warranties and liability">
-        <p>TipMint is provided on an “as available” basis. To the fullest extent permitted by law, we disclaim implied warranties not expressly stated here and are not liable for indirect, incidental, or consequential losses, lost income, tax errors, payroll disputes, or decisions based on App calculations.</p>
+        <p>TipMint is provided on an “as available” basis. To the fullest extent permitted by law, we disclaim implied warranties not expressly stated here and are not liable for indirect, incidental, or consequential losses, lost income, tax-reporting errors, payroll disputes, or decisions based on App estimates.</p>
         <p>Nothing in these Terms excludes liability that cannot lawfully be excluded, including liability for death or personal injury caused by negligence, fraud, or your mandatory consumer rights. If you are a consumer, you retain all protections provided by applicable law.</p>
       </LegalSection>
 
@@ -310,7 +310,7 @@ export function TipTrackerSupport() {
     { q: "How do I cancel a subscription?", a: "Subscriptions are managed by the store where you bought them. On iPhone, use Apple Account > Subscriptions. On Android, use Google Play > Payments & subscriptions > Subscriptions. Deleting the App does not cancel a subscription." },
     { q: "Where is my shift data?", a: "TipMint stores shift records locally on your device. We cannot view or recover them from a server. Use a JSON backup when you want a restorable copy or CSV for a spreadsheet, and protect those files wherever you save them." },
     { q: "How do I delete my data?", a: "Delete shift records using the controls in TipMint. Removing the App normally removes its local data, although device backups and exports you created must be managed separately. To request deletion of purchase or support information held by DigitalSprout or RevenueCat, email info@digitalsprout.org with your platform and store order or transaction reference—never send payment-card details. Apple or Google may retain store records under their own policies and legal duties." },
-    { q: "Why does my total differ from payroll?", a: "TipMint uses the information you enter and is not an official payroll or tax system. Check your entries and compare them with employer records or professional advice." },
+    { q: "Why does my total differ from payroll?", a: "TipMint shows estimated earnings from the information you enter. It does not calculate taxes or payroll deductions. Check your entries and compare them with official employer records." },
   ];
 
   return (

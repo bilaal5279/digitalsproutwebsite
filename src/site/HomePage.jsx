@@ -33,17 +33,17 @@ function TipMintPreview() {
           <div><small>Good evening</small><strong>TipMint</strong></div>
         </div>
         <div className="tm-shift-card">
-          <span>Tonight’s shift</span>
-          <strong>$186.50</strong>
-          <small>6h 42m · $27.84 / hour</small>
+          <span>Estimated earnings</span>
+          <strong>$284.60</strong>
+          <small>7h 20m · $38.81 / hour</small>
           <div className="tm-shift-card__split"><i /><i /><i /></div>
         </div>
         <div className="tm-metric-row">
-          <div><small>Cash</small><strong>$74.00</strong></div>
-          <div><small>Card</small><strong>$112.50</strong></div>
+          <div><small>Net tips</small><strong>$221.50</strong></div>
+          <div><small>Wages</small><strong>$63.10</strong></div>
         </div>
         <div className="tm-week">
-          <span><strong>This week</strong><small>$642.80 total</small></span>
+          <span><strong>This week</strong><small>$642.80 estimated</small></span>
           <div className="tm-bars" aria-hidden="true">
             {[42, 68, 35, 82, 58, 91, 22].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}
           </div>
@@ -60,7 +60,7 @@ export default function HomePage() {
     <SitePage>
       <PageMeta
         title="DigitalSprout — Small apps. Genuinely useful."
-        description="DigitalSprout is an independent UK app studio making focused, privacy-minded tools for everyday life. Meet TipMint, the shift and tip tracker for hospitality workers."
+        description="DigitalSprout is an independent UK app studio making focused, privacy-minded tools for everyday life. Meet TipMint, the hospitality shift tracker for net tips and estimated earnings."
       />
 
       <section className="ds-hero">
@@ -105,7 +105,7 @@ export default function HomePage() {
               <p className="ds-kicker">Featured app · TipMint</p>
               <h2>Clock out.<br />Know your number.</h2>
             </div>
-            <p>TipMint gives servers and hospitality workers a clean place to record shifts, understand tip income, and keep useful records—right on their iPhone.</p>
+            <p>TipMint gives servers and hospitality workers a clean place to record shifts, see net tips and estimated earnings, and keep useful records on iPhone and Android.</p>
           </div>
 
           <div className="ds-feature-grid">

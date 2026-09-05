@@ -23,6 +23,8 @@ describe('public routes', () => {
     expect(await screen.findByRole('heading', { name: /own the shift.*know the total/i })).toBeInTheDocument();
     expect(screen.getAllByText(/estimated earnings/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/net tips/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/\$5\.99/)).toBeInTheDocument();
+    expect(screen.getByText(/\$34\.99/)).toBeInTheDocument();
     expect(screen.getByText(/does not calculate taxes or payroll deductions/i)).toBeInTheDocument();
   });
 
@@ -35,6 +37,8 @@ describe('public routes', () => {
   test('states the TipMint calculation limitation in its terms', async () => {
     renderAt('/tip-tracker/terms-of-service');
     expect(await screen.findByRole('heading', { name: 'Terms of Service' })).toBeInTheDocument();
+    expect(screen.getByText(/\$5\.99 per month/i)).toBeInTheDocument();
+    expect(screen.getByText(/\$34\.99 per year/i)).toBeInTheDocument();
     expect(screen.getByText(/does not calculate taxes or payroll deductions/i)).toBeInTheDocument();
   });
 

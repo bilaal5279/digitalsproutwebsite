@@ -120,8 +120,8 @@ export function TipTrackerPage() {
         <div className="ds-shell">
           <div className="ds-section-heading"><p className="ds-kicker">Simple options</p><h2>Choose the fit that works.</h2><p>Final price and currency are always shown by your app store before you buy.</p></div>
           <div className="tm-pricing__grid">
-            <article><small>Monthly</small><strong>$2.99 <span>/ month</span></strong><p>Flexible access, billed monthly through your app store.</p></article>
-            <article className="tm-pricing__featured"><span className="tm-pricing__badge">Trial if eligible</span><small>Annual</small><strong>$19.99 <span>/ year</span></strong><p>Eligible new subscribers may receive a 7-day trial where offered.</p></article>
+            <article><small>Monthly</small><strong>$5.99 <span>/ month</span></strong><p>Flexible access, billed monthly through your app store.</p></article>
+            <article className="tm-pricing__featured"><span className="tm-pricing__badge">Trial if eligible</span><small>Annual</small><strong>$34.99 <span>/ year</span></strong><p>Eligible new subscribers may receive a 7-day trial where offered.</p></article>
             <article><small>Lifetime</small><strong>$49.99 <span>once</span></strong><p>One-time Pro access for the commercial life of the app; terms apply.</p></article>
           </div>
           <p className="tm-pricing__fine">Prices shown in USD and may vary by storefront, currency, tax, or store pricing changes. Subscriptions renew automatically unless cancelled through Apple or Google Play.</p>
@@ -260,7 +260,7 @@ export function TipTrackerTermsOfService() {
 
       <LegalSection number="04" title="Subscriptions and purchases">
         <p>TipMint may offer these premium options:</p>
-        <ul><li><strong>Monthly:</strong> $2.99 per month.</li><li><strong>Annual:</strong> $19.99 per year, with a 7-day free trial when shown as eligible by the applicable store.</li><li><strong>Lifetime:</strong> $49.99 as a one-time purchase.</li></ul>
+        <ul><li><strong>Monthly:</strong> $5.99 per month.</li><li><strong>Annual:</strong> $34.99 per year, with a 7-day free trial when shown as eligible by the applicable store.</li><li><strong>Lifetime:</strong> $49.99 as a one-time purchase.</li></ul>
         <p>These are reference prices in US dollars. The price, currency, tax, trial eligibility, and exact offer shown by Apple or Google Play before confirmation control your purchase and may vary by country, storefront, or later pricing change.</p>
         <p>Monthly and annual subscriptions renew automatically through the store where you bought them unless cancelled in that store’s subscription settings before renewal. If you begin an eligible trial and do not cancel before it ends, the applicable store will charge the displayed subscription price. Its purchase screen and terms control the exact billing and cancellation timing.</p>
       </LegalSection>

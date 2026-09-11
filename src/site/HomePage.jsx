@@ -1,177 +1,47 @@
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Check,
-  FileSpreadsheet,
-  LockKeyhole,
-  MoveUpRight,
-  ShieldCheck,
-  Sparkles,
-  TimerReset,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, Layers3, MessageCircle, ScanLine } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageMeta, SitePage } from "./SiteChrome";
-
-const studioApps = [
-  { name: "Luma", type: "Migraine journal", color: "lilac" },
-  { name: "Throughline", type: "Symptom journal", color: "sky" },
-  { name: "SoberTracker", type: "Sobriety companion", color: "mint" },
-  { name: "PupTempo", type: "Training timer", color: "coral" },
-  { name: "Ask Tarot", type: "Card companion", color: "ink" },
-  { name: "Vocal Remover", type: "Audio utility", color: "sun" },
-];
-
-function TipMintPreview() {
-  return (
-    <div className="tm-preview" aria-label="Illustration of the TipMint shift summary">
-      <div className="tm-preview__glow tm-preview__glow--one" />
-      <div className="tm-preview__glow tm-preview__glow--two" />
-      <div className="tm-phone">
-        <div className="tm-phone__bar"><span>9:41</span><i /></div>
-        <div className="tm-phone__brand">
-          <img src="/assets/tipmint-icon.png" alt="" />
-          <div><small>Good evening</small><strong>TipMint</strong></div>
-        </div>
-        <div className="tm-shift-card">
-          <span>Estimated earnings</span>
-          <strong>$284.60</strong>
-          <small>7h 20m · $38.81 / hour</small>
-          <div className="tm-shift-card__split"><i /><i /><i /></div>
-        </div>
-        <div className="tm-metric-row">
-          <div><small>Net tips</small><strong>$221.50</strong></div>
-          <div><small>Wages</small><strong>$63.10</strong></div>
-        </div>
-        <div className="tm-week">
-          <span><strong>This week</strong><small>$642.80 estimated</small></span>
-          <div className="tm-bars" aria-hidden="true">
-            {[42, 68, 35, 82, 58, 91, 22].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}
-          </div>
-        </div>
-      </div>
-      <div className="tm-float-card tm-float-card--privacy"><ShieldCheck size={18} /> On-device</div>
-      <div className="tm-float-card tm-float-card--export"><FileSpreadsheet size={18} /> CSV ready</div>
-    </div>
-  );
-}
+import { AppDirectory } from "./AppDirectory";
+import { studioProjects } from "./siteData";
 
 export default function HomePage() {
   return (
     <SitePage>
-      <PageMeta
-        title="DigitalSprout — Small apps. Genuinely useful."
-        description="DigitalSprout is an independent UK app studio making focused, privacy-minded tools for everyday life. Meet TipMint, the hospitality shift tracker for net tips and estimated earnings."
-      />
-
-      <section className="ds-hero">
-        <div className="ds-shell ds-hero__grid">
-          <div className="ds-hero__copy">
-            <p className="ds-eyebrow"><Sparkles size={15} aria-hidden="true" /> Independent app studio · UK</p>
-            <h1>Small apps.<br /><em>Genuinely useful.</em></h1>
-            <p className="ds-hero__lede">
-              We make calm, focused tools that solve one real problem well—without noisy dashboards, ad-tech, or unnecessary accounts.
-            </p>
-            <div className="ds-actions">
-              <Link className="ds-button ds-button--ink" to="/tip-tracker">
-                Explore TipMint <ArrowRight size={17} aria-hidden="true" />
-              </Link>
-              <a className="ds-text-link" href="#apps">See the studio shelf <MoveUpRight size={16} aria-hidden="true" /></a>
-            </div>
-            <div className="ds-hero__notes" aria-label="Studio principles">
-              <span><Check size={15} aria-hidden="true" /> Clear purpose</span>
-              <span><Check size={15} aria-hidden="true" /> Thoughtful privacy</span>
-              <span><Check size={15} aria-hidden="true" /> Human support</span>
-            </div>
+      <PageMeta title="DigitalSprout — Thoughtful apps for everyday life" description="Explore DigitalSprout’s independent collection of apps for wellbeing, work, creativity and everyday tasks. Find your app, support and clear product policies in one place." />
+      <section className="portfolio-hero">
+        <div className="ds-shell portfolio-hero__grid">
+          <div className="portfolio-hero__copy">
+            <p className="portfolio-eyebrow"><span /> Independent software studio · UK</p>
+            <h1>Practical apps.<br /><span>Thoughtfully made.</span></h1>
+            <p className="portfolio-lede">A collection of focused tools for your work, wellbeing and everything in between. Find the right app for the way you live.</p>
+            <div className="ds-actions"><a className="ds-button ds-button--ink" href="#apps">Explore our apps <ArrowRight size={18} /></a><Link className="portfolio-quiet-link" to="/support">Get support <ArrowUpRight size={17} /></Link></div>
+            <div className="portfolio-hero__footnote"><span>{studioProjects.length} focused projects</span><i /><span>One independent studio</span></div>
           </div>
-
-          <div className="ds-hero__visual">
-            <div className="ds-hero__stamp" aria-hidden="true">MADE<br />WITH<br />CARE</div>
-            <TipMintPreview />
-          </div>
+          <Link className="portfolio-feature" to="/tip-tracker" aria-label="Explore TipMint, our upcoming server tip tracker">
+            <div className="portfolio-feature__top"><span>Next from the studio</span><ArrowUpRight size={22} /></div>
+            <img src="/assets/tipmint-icon.png" alt="" width="88" height="88" />
+            <div><p className="portfolio-feature__name">TipMint</p><h2>A clearer view<br />of every shift.</h2><p>Cash, card, hours and tip-outs.<br />Your working day, all accounted for.</p></div>
+            <div className="portfolio-feature__bottom"><span className="portfolio-status">In development</span><span>Meet TipMint <ArrowRight size={17} /></span></div>
+          </Link>
         </div>
       </section>
-
-      <div className="ds-manifesto-strip" aria-hidden="true">
-        <span>Useful by design</span><i />
-        <span>Private by instinct</span><i />
-        <span>Built for real life</span><i />
-        <span>Useful by design</span>
-      </div>
-
-      <section className="ds-section ds-section--tipmint" id="apps">
+      <section className="portfolio-collection" id="apps" aria-labelledby="collection-title">
         <div className="ds-shell">
-          <div className="ds-section-heading ds-section-heading--split">
-            <div>
-              <p className="ds-kicker">Featured app · TipMint</p>
-              <h2>Clock out.<br />Know your number.</h2>
-            </div>
-            <p>TipMint gives servers and hospitality workers a clean place to record shifts, see net tips and estimated earnings, and keep useful records on iPhone and Android.</p>
-          </div>
-
-          <div className="ds-feature-grid">
-            <article className="ds-feature-card ds-feature-card--hero">
-              <div className="ds-feature-card__icon"><TimerReset size={24} aria-hidden="true" /></div>
-              <span className="ds-card-number">01</span>
-              <h3>Shift-first tracking</h3>
-              <p>Capture hours and tips while the shift is still fresh, then see useful totals without spreadsheet busywork.</p>
-              <Link to="/tip-tracker">Take a closer look <ArrowUpRight size={16} aria-hidden="true" /></Link>
-            </article>
-            <article className="ds-feature-card">
-              <div className="ds-feature-card__icon ds-feature-card__icon--coral"><FileSpreadsheet size={24} aria-hidden="true" /></div>
-              <span className="ds-card-number">02</span>
-              <h3>Your records, portable</h3>
-              <p>Export a spreadsheet or create a portable JSON backup whenever you want a copy under your control.</p>
-            </article>
-            <article className="ds-feature-card ds-feature-card--dark">
-              <div className="ds-feature-card__icon ds-feature-card__icon--light"><LockKeyhole size={24} aria-hidden="true" /></div>
-              <span className="ds-card-number">03</span>
-              <h3>Private on purpose</h3>
-              <p>No account. No ads. No behavioural tracking. Your shift data stays on your device.</p>
-            </article>
-          </div>
+          <div className="portfolio-section-heading"><div><p className="portfolio-eyebrow">The collection</p><h2 id="collection-title">Find your everyday essential.</h2></div><p>Browse by purpose. Every project has its own support and policy links, right where you need them.</p></div>
+          <AppDirectory />
         </div>
       </section>
-
-      <section className="ds-section ds-section--shelf">
+      <section className="portfolio-studio" id="approach" aria-labelledby="studio-title">
         <div className="ds-shell">
-          <div className="ds-section-heading">
-            <p className="ds-kicker">The studio shelf</p>
-            <h2>A growing set of focused tools.</h2>
-            <p>Different jobs, one standard: make the useful thing feel effortless.</p>
-          </div>
-          <div className="ds-app-shelf">
-            {studioApps.map((app, index) => (
-              <article className={`ds-app-tile ds-app-tile--${app.color}`} key={app.name}>
-                <span className="ds-app-tile__glyph" aria-hidden="true">{app.name.slice(0, 1)}</span>
-                <div><h3>{app.name}</h3><p>{app.type}</p></div>
-                <span className="ds-app-tile__index">0{index + 1}</span>
-              </article>
-            ))}
+          <div className="portfolio-section-heading"><div><p className="portfolio-eyebrow">Behind the apps</p><h2 id="studio-title">Independent by choice.<br />Considered in the details.</h2></div><p>DigitalSprout is a UK software studio. We make individual apps with a clear job to do, and keep the people using them close to the process.</p></div>
+          <div className="portfolio-principles">
+            <article><Layers3 size={25} /><h3>One clear purpose</h3><p>Useful tools built around a specific task, from keeping a journal to finishing a shift.</p></article>
+            <article><ScanLine size={25} /><h3>Clarity comes first</h3><p>Find product-specific privacy information and terms without having to search through unrelated projects.</p></article>
+            <article><MessageCircle size={25} /><h3>A direct line to us</h3><p>Questions, a problem or a thoughtful suggestion? The studio support desk is an email away.</p><Link to="/support">Talk to our team <ArrowUpRight size={16} /></Link></article>
           </div>
         </div>
       </section>
-
-      <section className="ds-section ds-section--approach" id="approach">
-        <div className="ds-shell ds-approach">
-          <div>
-            <p className="ds-kicker ds-kicker--light">Our approach</p>
-            <h2>Less software.<br /><em>More signal.</em></h2>
-          </div>
-          <div className="ds-approach__list">
-            <article><span>01</span><div><h3>Start with the real moment</h3><p>We design around the thing someone is trying to do, not a feature checklist.</p></div></article>
-            <article><span>02</span><div><h3>Keep the data boundary clear</h3><p>Local-first choices and plain-language policies make privacy easier to understand.</p></div></article>
-            <article><span>03</span><div><h3>Stay close to the details</h3><p>Independent means the people making the app are also listening when you need help.</p></div></article>
-          </div>
-        </div>
-      </section>
-
-      <section className="ds-section ds-cta">
-        <div className="ds-shell ds-cta__inner">
-          <img src="/assets/digitalsprout-mark.png" alt="" />
-          <div><p className="ds-kicker">Fresh from the studio</p><h2>Make every shift add up.</h2></div>
-          <Link className="ds-button ds-button--coral" to="/tip-tracker">Meet TipMint <ArrowRight size={17} aria-hidden="true" /></Link>
-        </div>
-      </section>
+      <section className="portfolio-contact"><div className="ds-shell portfolio-contact__inner"><div><p className="portfolio-eyebrow">Here to help</p><h2>Your app. The right answer.</h2><p>Find support, privacy policies and terms for every project.</p></div><Link className="ds-button ds-button--ink" to="/support">Visit the support hub <ArrowRight size={18} /></Link></div></section>
     </SitePage>
   );
 }

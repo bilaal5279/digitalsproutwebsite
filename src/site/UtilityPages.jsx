@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, Mail, SearchX } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageMeta, SitePage } from "./SiteChrome";
-import { legalDirectory } from "./siteData";
+import { AppDirectory } from "./AppDirectory";
 
 export function SupportPage() {
   return (
@@ -28,12 +28,10 @@ export function SupportPage() {
           </aside>
         </div>
       </section>
-      <section className="ds-section studio-support__legal">
+      <section className="ds-section studio-support__legal" id="policies">
         <div className="ds-shell">
           <div className="ds-section-heading"><p className="ds-kicker">App documents</p><h2>Find the right policy.</h2><p>Choose an app to open its current privacy policy or terms.</p></div>
-          <div className="studio-support__directory">
-            {legalDirectory.map((app) => <article key={app.name}><strong>{app.name}</strong><span><Link to={app.privacy}>Privacy</Link>{app.terms && <Link to={app.terms}>Terms</Link>}</span></article>)}
-          </div>
+          <AppDirectory policiesOnly />
         </div>
       </section>
     </SitePage>

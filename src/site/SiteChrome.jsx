@@ -52,20 +52,20 @@ export function SiteHeader({ dark = false }) {
           <Brand inverse={dark} />
         </Link>
         <nav className="ds-nav" aria-label="Main navigation">
-          <Link to="/#apps">Apps</Link>
-          <Link to="/#approach">Approach</Link>
-          <Link to="/support">Support</Link>
-          <Link to="/tip-tracker" className="ds-button ds-button--small ds-button--ink">
-            Meet TipMint <ArrowUpRight size={15} aria-hidden="true" />
+          <a href="/#apps">Our apps</a>
+          <a href="/#approach">The studio</a>
+          <a href="/support#policies">Privacy & terms</a>
+          <Link to="/support" className="ds-button ds-button--small ds-button--ink">
+            Get support <ArrowUpRight size={15} aria-hidden="true" />
           </Link>
         </nav>
         <details className="ds-mobile-menu">
           <summary aria-label="Open navigation"><Menu size={22} aria-hidden="true" /> Menu</summary>
           <nav aria-label="Mobile navigation">
-            <Link to="/#apps">Apps</Link>
-            <Link to="/#approach">Approach</Link>
-            <Link to="/support">Support</Link>
-            <Link to="/tip-tracker">Meet TipMint</Link>
+            <a href="/#apps">Our apps</a>
+            <a href="/#approach">The studio</a>
+            <a href="/support#policies">Privacy & terms</a>
+            <a href="/support">Get support</a>
           </nav>
         </details>
       </div>
@@ -83,7 +83,8 @@ export function SiteFooter() {
             <p>Independent apps with a clear purpose, thoughtfully made in the UK.</p>
           </div>
           <div className="ds-footer__links" aria-label="Footer navigation">
-            <Link to="/tip-tracker">TipMint</Link>
+            <a href="/#apps">Our apps</a>
+            <a href="/#approach">The studio</a>
             <Link to="/support">Support</Link>
             <a href="mailto:info@digitalsprout.org">Email us</a>
           </div>
@@ -105,7 +106,7 @@ export function SiteFooter() {
         </details>
 
         <div className="ds-footer__bottom">
-          <span>© {new Date().getFullYear()} DigitalSprout, UK</span>
+          <span>© {new Date().getFullYear()} DigitalSprout Ltd · United Kingdom</span>
           <a href="mailto:info@digitalsprout.org"><Mail size={14} aria-hidden="true" /> info@digitalsprout.org</a>
         </div>
       </div>

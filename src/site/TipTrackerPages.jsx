@@ -205,6 +205,7 @@ export function TipTrackerPrivacyPolicy() {
 
       <LegalSection number="06" title="Why information is processed">
         <p>Local shift information is processed on your device to provide the features you request. Purchase information is processed to perform our contract with you by validating, restoring, and maintaining premium access. We may also retain limited purchase or correspondence records where needed to comply with law, resolve disputes, or protect our legitimate interests.</p>
+        <p>We also use RevenueCat purchase information to understand subscription performance, including purchases, renewals, and cancellations. This purchase analytics does not include your locally stored shift records.</p>
       </LegalSection>
 
       <LegalSection number="07" title="Sharing and international processing">
@@ -320,6 +321,16 @@ export function TipTrackerSupport() {
         <div className="ds-shell support-hero__inner">
           <div><p className="ds-eyebrow ds-eyebrow--mint"><HelpCircle size={15} /> TipMint support</p><h1>Let’s get you<br /><em>back on shift.</em></h1><p>Clear answers for common questions, plus a direct line to the small team making TipMint.</p></div>
           <div className="support-contact-card"><img src="/assets/tipmint-icon.png" alt="TipMint app icon" /><small>Email support</small><h2>Tell us what happened.</h2><p>Include your device model, iOS or Android version, TipMint version, and the steps that led to the issue. Please do not send payment-card details or sensitive workplace records.</p><a className="ds-button ds-button--mint" href="mailto:info@digitalsprout.org?subject=TipMint%20Support">Email info@digitalsprout.org <Mail size={16} /></a></div>
+        </div>
+      </section>
+      <section className="ds-section support-deletion" id="data-deletion" aria-labelledby="deletion-title">
+        <div className="ds-shell support-deletion__inner">
+          <div><p className="ds-kicker">Your data, your choice</p><h2 id="deletion-title">Delete your TipMint data.</h2><p>TipMint is made by DigitalSprout Ltd and has no user account to close. Here is how to remove local records or request deletion of information held for purchases and support.</p><a className="ds-button ds-button--ink" href="mailto:info@digitalsprout.org?subject=TipMint%20Data%20Deletion">Request data deletion <Mail size={17} /></a></div>
+          <div className="support-deletion__steps">
+            <h3>1. Remove records on your device</h3><p>Delete shifts using the controls in TipMint. Removing the App normally removes its local data. Delete any exported CSV, PDF or JSON files and device backups separately. We do not hold a server copy of your shifts.</p>
+            <h3>2. Request purchase or support-data deletion</h3><p>Email info@digitalsprout.org with the subject “TipMint Data Deletion”. Tell us whether you use iOS or Android and provide your store order or transaction reference if your request concerns a purchase. For a support email, contact us from the same email address. Do not send passwords or payment-card details.</p>
+            <h3>3. Check subscriptions and retained records</h3><p>A deletion request does not cancel a subscription. Cancel it separately in Apple Account or Google Play subscription settings if you no longer want it. We review requests for DigitalSprout support records and RevenueCat purchase information; some records may need to be retained for legal obligations or disputes. We will explain any applicable retention when handling your request. Apple and Google control their own store records under their policies and legal duties.</p><Link to="/tip-tracker/privacy-policy">Read TipMint’s privacy policy <ArrowRight size={16} /></Link>
+          </div>
         </div>
       </section>
       <section className="ds-section support-faq">

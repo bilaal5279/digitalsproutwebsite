@@ -10,6 +10,7 @@ import {
 } from "./site/TipTrackerPages";
 import { NotFoundPage, SupportPage } from "./site/UtilityPages";
 import "./App.css";
+import "./site/portfolio.css";
 
 const lazyDefault = (loader) => lazy(loader);
 const lazyNamed = (loader, exportName) => lazy(() => loader().then((module) => ({ default: module[exportName] })));

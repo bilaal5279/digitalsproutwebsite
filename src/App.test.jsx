@@ -17,8 +17,8 @@ describe('public routes', () => {
   test('renders the redesigned studio homepage', async () => {
     renderAt('/');
     expect(await screen.findByRole('heading', { name: /practical apps.*thoughtfully made/i })).toBeInTheDocument();
-    expect(screen.getByRole('status')).toHaveTextContent('23 projects');
-    expect(screen.getAllByRole('article')).toHaveLength(26);
+    expect(screen.getByRole('status')).toHaveTextContent('24 projects');
+    expect(screen.getAllByRole('article')).toHaveLength(27);
   });
 
   test('renders the TipMint product page', async () => {
@@ -53,6 +53,35 @@ describe('public routes', () => {
     expect(screen.getByRole('link', { name: /request data deletion/i })).toHaveAttribute('href', 'mailto:info@digitalsprout.org?subject=TipMint%20Data%20Deletion');
   });
 
+  test('renders Haulfolio privacy disclosures and canonical URL', async () => {
+    renderAt('/haulfolio/privacy-policy');
+    expect(await screen.findByRole('heading', { name: 'Privacy Policy' })).toBeInTheDocument();
+    expect(screen.getByText(/randomly generated app user identifier/i)).toBeInTheDocument();
+    expect(screen.getByText(/RevenueCat provides subscription analytics/i)).toBeInTheDocument();
+    expect(screen.getByText(/stored locally in the app’s storage/i)).toBeInTheDocument();
+    expect(document.title).toBe('Privacy Policy — Haulfolio');
+    expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute('href', 'https://digitalsprout.org/haulfolio/privacy-policy');
+    expect(screen.getByRole('link', { name: 'Read the Terms of Service' })).toHaveAttribute('href', '/haulfolio/terms-of-service');
+  });
+
+  test('renders Haulfolio subscription terms and retained record access', async () => {
+    renderAt('/haulfolio/terms-of-service');
+    expect(await screen.findByRole('heading', { name: 'Terms of Service' })).toBeInTheDocument();
+    expect(screen.getByText(/free plan allows 25 owned, unsold physical items/i)).toBeInTheDocument();
+    expect(screen.getByText(/If Pro expires, every existing record remains available/i)).toBeInTheDocument();
+    expect(screen.getByText(/does not itself cancel automatic renewal/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Read the Privacy Policy' })).toHaveAttribute('href', '/haulfolio/privacy-policy');
+  });
+
+  test('makes both Haulfolio documents discoverable from support', async () => {
+    renderAt('/support');
+    const names = await screen.findAllByText('Haulfolio');
+    const entry = names.map((name) => name.closest('article')).find(Boolean);
+    expect(entry).toBeInTheDocument();
+    expect(within(entry).getByRole('link', { name: 'Haulfolio privacy policy' })).toHaveAttribute('href', '/haulfolio/privacy-policy');
+    expect(within(entry).getByRole('link', { name: 'Haulfolio terms of service' })).toHaveAttribute('href', '/haulfolio/terms-of-service');
+  });
+
   test('preserves a lazy-loaded legacy legal route', async () => {
     renderAt('/sobertracker/privacy-policy');
     expect(await screen.findByRole('heading', { name: 'Privacy Policy' })).toBeInTheDocument();
@@ -73,7 +102,7 @@ describe('project directory', () => {
     expect(screen.getByRole('heading', { name: 'Luma' })).toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: 'Revive' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Clear app search' }));
-    expect(screen.getByRole('status')).toHaveTextContent('23 projects');
+    expect(screen.getByRole('status')).toHaveTextContent('24 projects');
   });
 
   test('combines category filters and search, then resets empty results', () => {
@@ -86,7 +115,7 @@ describe('project directory', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Show all apps' }));
     expect(screen.getByRole('searchbox')).toHaveValue('');
     expect(screen.getByRole('button', { name: 'All apps' })).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByRole('status')).toHaveTextContent('23 projects');
+    expect(screen.getByRole('status')).toHaveTextContent('24 projects');
   });
 
   test('keeps every app policy at its original URL in the support hub', () => {

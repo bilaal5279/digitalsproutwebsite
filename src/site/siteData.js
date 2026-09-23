@@ -1,4 +1,5 @@
 export const legalDirectory = [
+  { name: "Haulfolio", privacy: "/haulfolio/privacy-policy", terms: "/haulfolio/terms-of-service" },
   { name: "TipMint", privacy: "/tip-tracker/privacy-policy", terms: "/tip-tracker/terms-of-service" },
   { name: "Find My Device", privacy: "/Findmydevice/privacy-policy", terms: "/Findmydevice/terms-of-service" },
   { name: "PDF Converter", privacy: "/pdfconverter/privacypolicy", terms: "/pdfconverter/terms-of-service" },
@@ -25,6 +26,7 @@ export const legalDirectory = [
 ];
 
 const projectDetails = {
+  Haulfolio: ["Work & money", "Keep clothing inventory, sales and recorded costs organized.", "Hf", "green"],
   TipMint: ["Work & money", "Track server tips, working hours and shift earnings.", "TM", "green"],
   Luma: ["Wellbeing", "A focused journal for migraines and the patterns around them.", "Lu", "purple"],
   Throughline: ["Wellbeing", "Keep a clear record of symptoms over time.", "Th", "blue"],
@@ -54,7 +56,7 @@ const featuredOrder = ["TipMint", "Luma", "Revive", "Throughline", "Oche", "PupT
 export const projectCategories = ["All apps", "Wellbeing", "Work & money", "Creative", "Everyday tools"];
 export const studioProjects = legalDirectory.map((app) => {
   const [category, description, monogram, tone] = projectDetails[app.name];
-  return { ...app, category, description, monogram, tone, slug: app.name.toLowerCase().replaceAll(" ", "-"), ...(app.name === "TipMint" ? { product: "/tip-tracker", upcoming: true, image: "/assets/tipmint-icon.png" } : {}) };
+  return { ...app, category, description, monogram, tone, ...(app.name === "Haulfolio" ? { upcoming: true } : {}), slug: app.name.toLowerCase().replaceAll(" ", "-"), ...(app.name === "TipMint" ? { product: "/tip-tracker", upcoming: true, image: "/assets/tipmint-icon.png" } : {}) };
 }).sort((a, b) => {
   const aIndex = featuredOrder.indexOf(a.name);
   const bIndex = featuredOrder.indexOf(b.name);

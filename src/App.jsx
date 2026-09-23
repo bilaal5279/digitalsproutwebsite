@@ -58,6 +58,9 @@ const LumaTermsOfService = lazyNamed(() => import("./components/LumaLegal"), "Lu
 const VocalRemoverPrivacyPolicy = lazyNamed(() => import("./components/VocalRemoverLegal"), "VocalRemoverPrivacyPolicy");
 const VocalRemoverTermsOfService = lazyNamed(() => import("./components/VocalRemoverLegal"), "VocalRemoverTermsOfService");
 
+const HaulfolioPrivacyPolicy = lazyNamed(() => import("./site/HaulfolioLegal"), "HaulfolioPrivacyPolicy");
+const HaulfolioTermsOfService = lazyNamed(() => import("./site/HaulfolioLegal"), "HaulfolioTermsOfService");
+
 const legacyRoutes = [
   ["/unsent/privacy-policy", "Unsent Privacy Policy", UnsentPrivacyPolicy],
   ["/unsent/terms-of-service", "Unsent Terms of Service", UnsentTermsOfService],
@@ -137,6 +140,8 @@ function AppRoutes() {
         <Route path="/tip-tracker/terms-of-service" element={<TipTrackerTermsOfService />} />
         <Route path="/tip-tracker/support" element={<TipTrackerSupport />} />
         <Route path="/support" element={<SupportPage />} />
+        <Route path="/haulfolio/privacy-policy" element={<HaulfolioPrivacyPolicy />} />
+        <Route path="/haulfolio/terms-of-service" element={<HaulfolioTermsOfService />} />
         {legacyRoutes.map(([path, title, Component]) => (
           <Route key={path} path={path} element={<LegacyPage path={path} title={title} Component={Component} />} />
         ))}

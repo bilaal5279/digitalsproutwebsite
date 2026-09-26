@@ -59,6 +59,9 @@ describe('public routes', () => {
     expect(screen.getByText(/randomly generated app user identifier/i)).toBeInTheDocument();
     expect(screen.getByText(/RevenueCat provides subscription analytics/i)).toBeInTheDocument();
     expect(screen.getByText(/stored locally in the app’s storage/i)).toBeInTheDocument();
+    expect(screen.getByText(/random identifier for this app installation/i)).toHaveTextContent(/failed update launches or startup errors/i);
+    expect(screen.getByText(/We do not use the update service to upload/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Expo’s Privacy Policy' })).toHaveAttribute('href', 'https://expo.dev/privacy');
     expect(document.title).toBe('Privacy Policy — Haulfolio');
     expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute('href', 'https://digitalsprout.org/haulfolio/privacy-policy');
     expect(screen.getByRole('link', { name: 'Read the Terms of Service' })).toHaveAttribute('href', '/haulfolio/terms-of-service');

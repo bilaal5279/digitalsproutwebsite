@@ -57,7 +57,7 @@ export function HaulfolioPrivacyPolicy() {
     <HaulfolioLegalLayout
       kind="privacy"
       title="Privacy Policy"
-      description="Your inventory and photos are stored on your device. Purchases use Apple or Google and RevenueCat. You choose when to export, search eBay or use an available connection."
+      description="Your inventory and photos are stored on your device. Purchases use Apple or Google and RevenueCat. Expo delivers app updates. You choose when to export, search eBay or use an available connection."
     >
       <p className="legal-intro">Haulfolio helps clothing resellers keep track of inventory, sales and recorded costs without creating an account. This policy explains the app’s data handling and what happens when you contact us.</p>
 
@@ -80,7 +80,9 @@ export function HaulfolioPrivacyPolicy() {
         <p>RevenueCat provides subscription analytics, such as purchase and renewal reporting. Haulfolio has no advertising SDK, separate behavioral analytics SDK or advertising-identifier tracking, and we do not sell personal information or share it for targeted advertising. Learn more in <a href="https://www.revenuecat.com/privacy">RevenueCat’s Privacy Policy</a>, <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a> and <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.</p>
       </LegalSection>
 
-      <LegalSection number="04" title="Imports, exports, backups and device services">
+      <LegalSection number="04" title="App updates, imports, exports and backups">
+        <p>Haulfolio uses Expo Application Services (EAS Update) to check for and deliver software updates. In builds with this service enabled, update checks can run automatically when you open the app. Over an encrypted connection, Expo receives a random identifier for this app installation, the operating system, app/project and runtime/update versions, and information about failed update launches or startup errors. Expo also receives the IP address used for the request. This information supports update delivery, recovery from failures and reporting on update adoption and reliability.</p>
+        <p>The installation identifier is generated on your device and stored locally. It is not an advertising identifier or a Haulfolio account, and it is not derived from your name, email address or a hardware identifier. We do not use the update service to upload your inventory, photos, mileage log, CSV imports or backups. Expo processes update-service information on our behalf; see <a href="https://expo.dev/privacy">Expo’s Privacy Policy</a>.</p>
         <p>CSV files you select for import are read and checked on your device. After you review the column mapping and preview, the app can add inventory and historical sales records, including quantities, sources, storage locations, costs, dates, shipping, fees and supported adjustments. Importing a CSV does not upload it to us or connect to a marketplace account.</p>
         <p>When you choose to export a CSV or full backup, the app creates a file for the destination you select. A full backup contains your records and managed photos; a CSV export does not include the photos. Exports are not sent to us automatically. A backup does not contain your RevenueCat purchase identity, eBay connection credentials or device connection key, and does not grant a subscription.</p>
         <p>Files saved to email, cloud storage or another app are handled by that service. Exported files may contain private business information and are not password-encrypted by Haulfolio. Store them somewhere you trust and remove copies you no longer need.</p>
@@ -89,7 +91,7 @@ export function HaulfolioPrivacyPolicy() {
 
       <LegalSection number="05" title="Support and purposes of processing">
         <p>If you email us, we receive your email address, message and any attachments you choose to send. We use this information to answer your request and resolve problems. Send only the information needed; we will not ask for your password or full payment-card details.</p>
-        <p>Where UK or European data protection law applies, we process information needed to provide requested features, manage subscriptions and answer contractual support requests to perform our contract with you. We rely on legitimate interests for proportionate security, fraud prevention, support administration and subscription performance reporting, taking your rights into account. We also process information where necessary to meet legal obligations. Where an optional activity requires consent, we ask for it and you can withdraw it without affecting earlier lawful processing.</p>
+        <p>Where UK or European data protection law applies, we process information needed to provide requested features, deliver app updates, manage subscriptions and answer contractual support requests to perform our contract with you. We rely on legitimate interests for proportionate security, fraud prevention, troubleshooting, support administration and update/subscription performance reporting, taking your rights into account. We also process information where necessary to meet legal obligations. Where an optional activity requires consent, we ask for it and you can withdraw it without affecting earlier lawful processing.</p>
       </LegalSection>
 
       <LegalSection number="06" title="eBay research and optional connections">
@@ -102,14 +104,14 @@ export function HaulfolioPrivacyPolicy() {
       </LegalSection>
 
       <LegalSection number="07" title="Who receives information and where">
-        <p>RevenueCat and its service providers process subscription information for us. Our email and hosting providers process communications and the technical information needed to deliver those services. Apple and Google process store transactions under their own terms. We may disclose information when required by law or when reasonably necessary to establish or defend legal rights.</p>
+        <p>RevenueCat and its service providers process subscription information for us. Expo and its service providers process app-update information for us. Our email and hosting providers process communications and the technical information needed to deliver those services. Apple and Google process store transactions under their own terms. We may disclose information when required by law or when reasonably necessary to establish or defend legal rights.</p>
         <p>These providers may process information outside the United Kingdom, including in the United States. Where a transfer requires safeguards, we use the applicable contractual protections. RevenueCat’s <a href="https://www.revenuecat.com/dpa">Data Processing Addendum</a> includes standard contractual clauses and the UK transfer addendum for relevant transfers. Contact us for information about safeguards applicable to your data.</p>
       </LegalSection>
 
       <LegalSection number="08" title="Retention and deletion">
         <p>Local records remain on your device until you delete them or remove the app’s data. Archiving an item only changes its visibility. A subscription ending does not delete your records. Uninstalling the app can remove its local data, while copies in exports or device backups may remain until you delete them separately.</p>
         <p>Use the app’s delete-local-data control to erase its local workspace. Back up anything you want to keep first. We cannot retrieve or remotely erase inventory that exists only on your device. Deleting data or uninstalling the app does not cancel a subscription.</p>
-        <p>We retain support and subscription information only for as long as needed for the purposes described here, including resolving requests, verifying entitlements, dealing with disputes and meeting applicable legal record-keeping requirements. Retention depends on the nature of the record and those requirements. Contact us to request deletion of information held by us or our processors; we will explain any information we must retain and why.</p>
+        <p>We retain support, subscription and app-update information only for as long as needed for the purposes described here, including resolving requests, verifying entitlements, investigating update failures, dealing with disputes and meeting applicable legal record-keeping requirements. Retention depends on the nature of the record and those requirements. Contact us to request deletion of information held by us or our processors; we will explain any information we must retain and why.</p>
       </LegalSection>
 
       <LegalSection number="09" title="Your choices and privacy rights">
@@ -118,7 +120,7 @@ export function HaulfolioPrivacyPolicy() {
       </LegalSection>
 
       <LegalSection number="10" title="Security and children">
-        <p>We use reasonable safeguards appropriate to the information involved, including encrypted connections for subscription services. No storage or transmission method is completely secure. Protect access to your device, install updates and keep a usable backup of important records.</p>
+        <p>We use reasonable safeguards appropriate to the information involved, including encrypted connections for subscription and app-update services. No storage or transmission method is completely secure. Protect access to your device, install updates and keep a usable backup of important records.</p>
         <p>Haulfolio is intended for people managing resale activity and is not directed to children under 13. If you believe a child has provided us with personal information, contact us so we can investigate and take appropriate action.</p>
       </LegalSection>
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { PageMeta, SitePage } from "./SiteChrome";
 
 const EFFECTIVE_DATE = "26 September 2026";
+const PRIVACY_EFFECTIVE_DATE = "3 October 2026";
 const PRIVACY_PATH = "/haulfolio/privacy-policy";
 const TERMS_PATH = "/haulfolio/terms-of-service";
 
@@ -36,7 +37,7 @@ function HaulfolioLegalLayout({ kind, title, description, children }) {
           <Link to="/support"><ArrowLeft size={16} /> Back to support</Link>
           <div className="legal-hero__identity"><Package size={24} aria-hidden="true" /><span>HAULFOLIO</span></div>
           <h1>{title}</h1>
-          <p>Effective {EFFECTIVE_DATE} · Written to be read by humans</p>
+          <p>Effective {isPrivacy ? PRIVACY_EFFECTIVE_DATE : EFFECTIVE_DATE} · Written to be read by humans</p>
         </div>
       </header>
       <div className="ds-shell legal-layout">
@@ -69,6 +70,8 @@ export function HaulfolioPrivacyPolicy() {
         <p>Your inventory records, quantities, barcodes, item and receipt photos, purchase costs and dates, sources, storage locations, sales, fees, returns, expenses, notes and app preferences are stored locally in the app’s storage on your device. Core record keeping works offline. We do not operate a cloud inventory database or automatically upload these records to our servers or RevenueCat.</p>
         <p>The app uses the system photo or file picker to access only the photos or files you choose. You can decline optional permissions and still use basic record keeping, and change permissions in your device settings.</p>
         <p>If you use barcode scanning, Haulfolio asks for camera permission and reads UPC or EAN barcodes on your device. The scanner does not save or upload camera images or record audio. A barcode is stored as an item reference when you choose to save it; you can enter the number manually instead of using the camera.</p>
+        <p>On Android, barcode scanning uses Google ML Kit. Images and barcode contents are processed on your device and are not sent to Google by the scanner. ML Kit sends technical metrics to Google over HTTPS, including an installation identifier, device and app details, scanner usage events, performance measurements and error diagnostics. Google uses these metrics to analyse usage, maintain and improve the SDK, investigate problems and detect abuse. These metrics do not include your inventory or the barcode values you scan.</p>
+        <p>Camera access is optional, and manual barcode entry remains available. This permission choice does not promise that all ML Kit technical reporting is disabled. Google describes its handling in the <a href="https://developers.google.com/ml-kit/terms">ML Kit privacy information</a> and <a href="https://developers.google.com/ml-kit/android-data-disclosure">Android SDK data disclosure</a>, under <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.</p>
         <p>Business mileage is a manual log. The trip date, purpose, distance, miles or kilometres, and any start location, end location or notes you enter stay in your local workspace. Haulfolio does not use GPS, track your location or automatically record your journeys.</p>
         <p>Haulfolio does not require access to contacts, device location or your microphone. It does not use your photos for AI training or product recognition. Please avoid entering unnecessary personal information about buyers or other people.</p>
       </LegalSection>
@@ -104,7 +107,7 @@ export function HaulfolioPrivacyPolicy() {
       </LegalSection>
 
       <LegalSection number="07" title="Who receives information and where">
-        <p>RevenueCat and its service providers process subscription information for us. Expo and its service providers process app-update information for us. Our email and hosting providers process communications and the technical information needed to deliver those services. Apple and Google process store transactions under their own terms. We may disclose information when required by law or when reasonably necessary to establish or defend legal rights.</p>
+        <p>RevenueCat and its service providers process subscription information for us. Expo and its service providers process app-update information for us. Google receives the ML Kit technical metrics described above and handles them under its privacy policy. Our email and hosting providers process communications and the technical information needed to deliver those services. Apple and Google process store transactions under their own terms. We may disclose information when required by law or when reasonably necessary to establish or defend legal rights.</p>
         <p>These providers may process information outside the United Kingdom, including in the United States. Where a transfer requires safeguards, we use the applicable contractual protections. RevenueCat’s <a href="https://www.revenuecat.com/dpa">Data Processing Addendum</a> includes standard contractual clauses and the UK transfer addendum for relevant transfers. Contact us for information about safeguards applicable to your data.</p>
       </LegalSection>
 

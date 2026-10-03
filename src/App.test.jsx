@@ -62,6 +62,11 @@ describe('public routes', () => {
     expect(screen.getByText(/random identifier for this app installation/i)).toHaveTextContent(/failed update launches or startup errors/i);
     expect(screen.getByText(/We do not use the update service to upload/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Expo’s Privacy Policy' })).toHaveAttribute('href', 'https://expo.dev/privacy');
+    expect(screen.getByText(/On Android, barcode scanning uses Google ML Kit/i)).toHaveTextContent(/installation identifier.*scanner usage events.*error diagnostics/i);
+    expect(screen.getByText(/On Android, barcode scanning uses Google ML Kit/i)).toHaveTextContent(/not sent to Google by the scanner/i);
+    expect(screen.getByText(/Camera access is optional, and manual barcode entry remains available/i)).toHaveTextContent(/does not promise that all ML Kit technical reporting is disabled/i);
+    expect(screen.getByRole('link', { name: 'ML Kit privacy information' })).toHaveAttribute('href', 'https://developers.google.com/ml-kit/terms');
+    expect(screen.getByRole('link', { name: 'Android SDK data disclosure' })).toHaveAttribute('href', 'https://developers.google.com/ml-kit/android-data-disclosure');
     expect(document.title).toBe('Privacy Policy — Haulfolio');
     expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute('href', 'https://digitalsprout.org/haulfolio/privacy-policy');
     expect(screen.getByRole('link', { name: 'Read the Terms of Service' })).toHaveAttribute('href', '/haulfolio/terms-of-service');

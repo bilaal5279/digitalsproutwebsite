@@ -76,7 +76,9 @@ describe('public routes', () => {
     expect(screen.getByText(/While an eBay source cannot be verified/i)).toHaveTextContent(/imported records are hidden/i);
     expect(screen.getByText(/Backups do not include store receipts/i)).toHaveTextContent(/eBay authorization tokens or the secret device connection key/i);
     expect(screen.getByText(/cannot remotely remove files you already saved/i)).toBeInTheDocument();
-    expect(screen.getByText(/In-app product lookup through eBay’s Browse API is not enabled/i)).toBeInTheDocument();
+    expect(screen.getByText(/When you submit an in-app eBay search/i)).toHaveTextContent(/search text or barcode.*service and eBay/i);
+    expect(screen.getByText(/Public search results are held in working memory/i)).toHaveTextContent(/expire within two minutes.*does not save these results to inventory, drafts or backups/i);
+    expect(screen.getByText(/To invalidate public search previews/i)).toHaveTextContent(/contains no seller details or search history.*not a promise of immediate erasure/i);
   });
 
   test('renders Haulfolio subscription terms and retained record access', async () => {
@@ -90,6 +92,8 @@ describe('public routes', () => {
     expect(screen.getByText(/eBay-derived records require online account-deletion checks/i)).toHaveTextContent(/including copies it manages in recovery storage and backups/i);
     expect(screen.getByText(/They do not transfer eBay authorization/i)).toHaveTextContent(/original device’s secure key/i);
     expect(screen.getByText(/does not publish or edit marketplace listings/i)).toBeInTheDocument();
+    expect(screen.getByText(/Public in-app results are temporary previews/i)).toHaveTextContent(/Open the listing on eBay to check its current details/i);
+    expect(screen.getByRole('link', { name: 'eBay API License Agreement' })).toHaveAttribute('href', 'https://developer.ebay.com/join/api-license-agreement');
   });
 
   test('makes both Haulfolio documents discoverable from support', async () => {

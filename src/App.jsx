@@ -58,6 +58,10 @@ const LumaTermsOfService = lazyNamed(() => import("./components/LumaLegal"), "Lu
 const VocalRemoverPrivacyPolicy = lazyNamed(() => import("./components/VocalRemoverLegal"), "VocalRemoverPrivacyPolicy");
 const VocalRemoverTermsOfService = lazyNamed(() => import("./components/VocalRemoverLegal"), "VocalRemoverTermsOfService");
 
+const HRTreePrivacyPolicy = lazyNamed(() => import("./site/HRTreePages"), "HRTreePrivacyPolicy");
+const HRTreeTermsOfService = lazyNamed(() => import("./site/HRTreePages"), "HRTreeTermsOfService");
+const HRTreeSupport = lazyNamed(() => import("./site/HRTreePages"), "HRTreeSupport");
+
 const HaulfolioPrivacyPolicy = lazyNamed(() => import("./site/HaulfolioLegal"), "HaulfolioPrivacyPolicy");
 const HaulfolioTermsOfService = lazyNamed(() => import("./site/HaulfolioLegal"), "HaulfolioTermsOfService");
 
@@ -140,6 +144,11 @@ function AppRoutes() {
         <Route path="/tip-tracker/terms-of-service" element={<TipTrackerTermsOfService />} />
         <Route path="/tip-tracker/support" element={<TipTrackerSupport />} />
         <Route path="/support" element={<SupportPage />} />
+        <Route path="/hrtree/privacy-policy" element={<HRTreePrivacyPolicy />} />
+        <Route path="/hrtree/terms-of-service" element={<HRTreeTermsOfService />} />
+        <Route path="/hrtree/support" element={<HRTreeSupport />} />
+        <Route path="/hrtree-privacy" element={<HRTreePrivacyPolicy />} />
+        <Route path="/hrtree-terms" element={<HRTreeTermsOfService />} />
         <Route path="/haulfolio/privacy-policy" element={<HaulfolioPrivacyPolicy />} />
         <Route path="/haulfolio/terms-of-service" element={<HaulfolioTermsOfService />} />
         {legacyRoutes.map(([path, title, Component]) => (

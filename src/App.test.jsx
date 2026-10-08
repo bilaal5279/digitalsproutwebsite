@@ -17,8 +17,8 @@ describe('public routes', () => {
   test('renders the redesigned studio homepage', async () => {
     renderAt('/');
     expect(await screen.findByRole('heading', { name: /practical apps.*thoughtfully made/i })).toBeInTheDocument();
-    expect(screen.getByRole('status')).toHaveTextContent('24 projects');
-    expect(screen.getAllByRole('article')).toHaveLength(27);
+    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.length} projects`);
+    expect(screen.getAllByRole('article')).toHaveLength(studioProjects.length + 3);
   });
 
   test('renders the TipMint product page', async () => {
@@ -129,7 +129,7 @@ describe('project directory', () => {
     expect(screen.getByRole('heading', { name: 'Luma' })).toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: 'Revive' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Clear app search' }));
-    expect(screen.getByRole('status')).toHaveTextContent('24 projects');
+    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.length} projects`);
   });
 
   test('combines category filters and search, then resets empty results', () => {
@@ -142,7 +142,7 @@ describe('project directory', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Show all apps' }));
     expect(screen.getByRole('searchbox')).toHaveValue('');
     expect(screen.getByRole('button', { name: 'All apps' })).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByRole('status')).toHaveTextContent('24 projects');
+    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.length} projects`);
   });
 
   test('keeps every app policy at its original URL in the support hub', () => {

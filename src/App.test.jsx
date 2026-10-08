@@ -70,13 +70,15 @@ describe('public routes', () => {
     expect(document.title).toBe('Privacy Policy — Haulfolio');
     expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute('href', 'https://digitalsprout.org/haulfolio/privacy-policy');
     expect(screen.getByRole('link', { name: 'Read the Terms of Service' })).toHaveAttribute('href', '/haulfolio/terms-of-service');
-    expect(screen.getByText(/billing initialization associates a pseudonymous identifier/i)).toHaveTextContent(/before you choose an eBay feature/i);
+    expect(screen.getByText(/billing initialization associates a pseudonymous identifier/i)).toHaveTextContent(/purchase and restore continuity.*eBay service does not contact RevenueCat/i);
+    expect(screen.getByText(/eBay imports do not require a subscription check with RevenueCat/i)).toHaveTextContent(/random device key.*privacy receipts/i);
+    expect(screen.getByText(/After you have used the app, it may request a rating/i)).toHaveTextContent(/request timestamps and app versions locally.*does not tell the app whether you submitted a rating/i);
     expect(screen.getByText(/minimal deletion marker in Google Cloud Firestore/i)).toHaveTextContent(/London region.*does not contain the seller’s username/i);
     expect(screen.getByText(/The minimal eBay deletion markers have no automatic expiry/i)).toBeInTheDocument();
     expect(screen.getByText(/While an eBay source cannot be verified/i)).toHaveTextContent(/imported records are hidden/i);
     expect(screen.getByText(/Backups do not include store receipts/i)).toHaveTextContent(/eBay authorization tokens or the secret device connection key/i);
     expect(screen.getByText(/cannot remotely remove files you already saved/i)).toBeInTheDocument();
-    expect(screen.getByText(/When you submit an in-app eBay search/i)).toHaveTextContent(/search text or barcode.*service and eBay/i);
+    expect(screen.getByText(/When you submit an in-app eBay search/i)).toHaveTextContent(/search text or barcode.*service and eBay.*does not send your subscription identifier to RevenueCat/i);
     expect(screen.getByText(/Public search results are held in working memory/i)).toHaveTextContent(/expire within two minutes.*does not save these results to inventory, drafts or backups/i);
     expect(screen.getByText(/To invalidate public search previews/i)).toHaveTextContent(/contains no seller details or search history.*not a promise of immediate erasure/i);
   });
@@ -84,8 +86,10 @@ describe('public routes', () => {
   test('renders Haulfolio subscription terms and retained record access', async () => {
     renderAt('/haulfolio/terms-of-service');
     expect(await screen.findByRole('heading', { name: 'Terms of Service' })).toBeInTheDocument();
-    expect(screen.getByText(/free plan allows 25 owned, unsold physical items/i)).toBeInTheDocument();
+    expect(screen.getByText(/free plan allows seven owned, unsold physical units/i)).toHaveTextContent(/Each unit counts.*Archived unsold units still count.*All tools are available without Pro/i);
+    expect(screen.getByText(/Pro removes only the owned, unsold inventory limit/i)).toBeInTheDocument();
     expect(screen.getByText(/If Pro expires, existing records are not removed merely because your subscription ended/i)).toHaveTextContent(/subject to the eBay privacy checks/i);
+    expect(screen.getByText(/If Pro expires, existing records are not removed merely because your subscription ended/i)).toHaveTextContent(/manual additions, purchase lots and unsold imports.*Physical returns and backup restoration remain available even above the allowance/i);
     expect(screen.getByText(/does not itself cancel automatic renewal/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Read the Privacy Policy' })).toHaveAttribute('href', '/haulfolio/privacy-policy');
     expect(screen.getByText(/Haulfolio itself does not require an account or sign-in/i)).toBeInTheDocument();

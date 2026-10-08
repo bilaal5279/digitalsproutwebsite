@@ -1,6 +1,6 @@
 # HRTree website handoff
 
-Prepared 8 October 2026. The HRTree legal text is a draft for the owner's legal review before publication. Check the operator details, support retention and provider arrangements, international transfer safeguards, store listing and shipped app behaviour. This document is internal release context; it is not rendered on the public pages.
+Prepared 8 October 2026. The HRTree legal text is a draft for the owner's legal review; publication does not replace that review. Check the operator details, support retention and provider arrangements, international transfer safeguards, store listing and shipped app behaviour. This document is internal release context; it is not rendered on the public pages.
 
 ## URLs
 
@@ -61,8 +61,10 @@ Those existing deletions prevent a normal build in this working directory. Valid
 Production build passed, ESLint passed, and all 78 Vitest tests passed, including 6 new HRTree-specific tests. The built privacy page was opened and visually inspected in Chrome. `git diff --check` passed. The isolated npm install reported four pre-existing dependency advisories (one moderate, three high); dependency upgrades were outside this content change. The new tests cover privacy distinctions, clinical/reminder limitations, deletion/contact instructions, canonical URLs, aliases and directory links; existing route tests also enumerate the new privacy and terms routes. Build output is retained in the temporary validation directory for review, not copied into tracked `dist` or published automatically.
 
 
-## Current publish blocker
+## Publication verified
 
-The deployment relationship cannot yet be confirmed: no Netlify CLI/config/environment credential is available, and GitHub exposes no statuses, check-runs or deployment records for upstream commit `55d196a`. The Netlify browser sign-in leads to an empty GitHub login form. The login tab is kept open for owner handoff; no credentials were entered. The source update can be published through Git; hosted deployment status must be checked separately. A source push alone is not proof that Netlify has published the pages.
+Source commit `95d797e9ac0c547cc31aead0f85dcab18a0bb580` was pushed to `origin/main` after confirming that local and remote main matched and there were no unrelated unpublished commits. Only the seven files listed above were committed; all eight pre-existing deletions remain unstaged.
 
-Validated build output: `/var/folders/dd/5f_c2dvd545f7d9_3kmgxwt80000gn/T/hrtree-site-check-fhppg2zi/dist`. A local preview runs at `http://127.0.0.1:4178/hrtree/privacy-policy` while this work is active.
+Netlify automatically published the update after the push. The three canonical HRTree pages and both short aliases were opened at the production domain in Chrome and verified to render their intended HRTree content. Navigation between privacy, terms and support works. No manual Netlify deployment or account access was needed.
+
+Validated build output remains at `/var/folders/dd/5f_c2dvd545f7d9_3kmgxwt80000gn/T/hrtree-site-check-fhppg2zi/dist` for this session. The existing local checkout still has the preserved deletions described above; use a complete checkout for future builds.

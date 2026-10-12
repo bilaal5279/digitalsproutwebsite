@@ -1,4 +1,5 @@
 export const legalDirectory = [
+  { name: "Ruckstride", privacy: "/ruckstride/privacy-policy", terms: "/ruckstride/terms-of-service", support: "/ruckstride/support", product: "/ruckstride", upcoming: true },
   { name: "HRTree", privacy: "/hrtree/privacy-policy", terms: "/hrtree/terms-of-service", support: "/hrtree/support" },
   { name: "Haulfolio", privacy: "/haulfolio/privacy-policy", terms: "/haulfolio/terms-of-service" },
   { name: "TipMint", privacy: "/tip-tracker/privacy-policy", terms: "/tip-tracker/terms-of-service" },
@@ -27,6 +28,7 @@ export const legalDirectory = [
 ];
 
 const projectDetails = {
+  Ruckstride: ["Wellbeing", "Record outdoor rucks and indoor weighted walks, with your workout history on your iPhone.", "Rs", "green"],
   HRTree: ["Wellbeing", "A private journal for menopause, symptoms and your prescribed HRT routine.", "Hr", "green"],
   Haulfolio: ["Work & money", "Keep clothing inventory, sales and recorded costs organized.", "Hf", "green"],
   TipMint: ["Work & money", "Track server tips, working hours and shift earnings.", "TM", "green"],

@@ -62,6 +62,11 @@ const HRTreePrivacyPolicy = lazyNamed(() => import("./site/HRTreePages"), "HRTre
 const HRTreeTermsOfService = lazyNamed(() => import("./site/HRTreePages"), "HRTreeTermsOfService");
 const HRTreeSupport = lazyNamed(() => import("./site/HRTreePages"), "HRTreeSupport");
 
+const RuckstridePage = lazyNamed(() => import("./site/RuckstridePages"), "RuckstridePage");
+const RuckstridePrivacyPolicy = lazyNamed(() => import("./site/RuckstridePages"), "RuckstridePrivacyPolicy");
+const RuckstrideTermsOfService = lazyNamed(() => import("./site/RuckstridePages"), "RuckstrideTermsOfService");
+const RuckstrideSupport = lazyNamed(() => import("./site/RuckstridePages"), "RuckstrideSupport");
+
 const HaulfolioPrivacyPolicy = lazyNamed(() => import("./site/HaulfolioLegal"), "HaulfolioPrivacyPolicy");
 const HaulfolioTermsOfService = lazyNamed(() => import("./site/HaulfolioLegal"), "HaulfolioTermsOfService");
 
@@ -144,6 +149,10 @@ function AppRoutes() {
         <Route path="/tip-tracker/terms-of-service" element={<TipTrackerTermsOfService />} />
         <Route path="/tip-tracker/support" element={<TipTrackerSupport />} />
         <Route path="/support" element={<SupportPage />} />
+        <Route path="/ruckstride" element={<RuckstridePage />} />
+        <Route path="/ruckstride/privacy-policy" element={<RuckstridePrivacyPolicy />} />
+        <Route path="/ruckstride/terms-of-service" element={<RuckstrideTermsOfService />} />
+        <Route path="/ruckstride/support" element={<RuckstrideSupport />} />
         <Route path="/hrtree/privacy-policy" element={<HRTreePrivacyPolicy />} />
         <Route path="/hrtree/terms-of-service" element={<HRTreeTermsOfService />} />
         <Route path="/hrtree/support" element={<HRTreeSupport />} />

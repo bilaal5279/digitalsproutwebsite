@@ -1,5 +1,5 @@
 export const legalDirectory = [
-  { name: "Ruckstride", privacy: "/ruckstride/privacy-policy", terms: "/ruckstride/terms-of-service", support: "/ruckstride/support", product: "/ruckstride", upcoming: true },
+  { name: "Ruckstride", privacy: "/ruckstride/privacy-policy", terms: "/ruckstride/terms-of-service", support: "/ruckstride/support", product: "/ruckstride", upcoming: true, image: "/assets/ruckstride-icon.png" },
   { name: "HRTree", privacy: "/hrtree/privacy-policy", terms: "/hrtree/terms-of-service", support: "/hrtree/support" },
   { name: "Haulfolio", privacy: "/haulfolio/privacy-policy", terms: "/haulfolio/terms-of-service" },
   { name: "TipMint", privacy: "/tip-tracker/privacy-policy", terms: "/tip-tracker/terms-of-service" },

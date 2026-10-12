@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ArrowLeft, ArrowRight, Backpack, Check, Compass, FileDown, Footprints, LockKeyhole, Mail, Map, Timer, TrendingUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, Compass, FileDown, Footprints, LockKeyhole, Mail, Map, Timer, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageMeta, SitePage } from "./SiteChrome";
 import "./ruckstride.css";
@@ -18,29 +18,16 @@ function usePageStart(path) {
 }
 
 function RuckstrideMark() {
-  return <span className="rs-mark" aria-hidden="true"><Backpack size={25} strokeWidth={1.7} /></span>;
+  return <span className="rs-mark" aria-hidden="true"><img src="/assets/ruckstride-icon.png" alt="" width="44" height="44" /></span>;
 }
 
-function RouteIllustration() {
+function AppPreview() {
   return (
-    <figure className="rs-preview">
-      <div className="rs-preview__header"><span><span className="rs-status-dot" /> OUTDOOR RUCK</span><Compass size={20} aria-hidden="true" /></div>
-      <svg className="rs-route" viewBox="0 0 440 270" role="img" aria-label="Illustration of a recorded walking route across contour lines">
-        <g fill="none" stroke="currentColor" strokeWidth="1.2" opacity=".3">
-          <path d="M-40 200C70 100 5 36 98 6S252 35 319-20M-20 227C93 137 36 64 117 35S254 65 358-10M-20 259C103 178 79 93 140 66S245 114 397 0M8 292C133 199 113 126 161 102S269 140 461 2M77 285C147 249 141 171 179 142S254 193 456 57M161 291C154 246 161 212 209 200S317 189 470 114M221 285C206 257 221 237 264 235S373 201 468 169M294 288C303 260 385 254 464 219" />
-          <path d="M-20 66C49 57 33-6 70-23M-20 104C55 92 55 3 84-20M343 299C377 281 416 279 469 265" />
-        </g>
-        <path d="M92 205C74 165 114 166 127 137S98 91 147 81S178 107 206 71S263 63 283 99S258 126 292 151S345 170 330 198S244 196 217 219S161 215 145 209S105 230 92 205Z" fill="none" stroke="#c3d889" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="92" cy="205" r="9" fill="#c3d889" stroke="#243b32" strokeWidth="4" />
-        <circle cx="92" cy="205" r="2" fill="#243b32" />
-      </svg>
-      <div className="rs-preview__caption"><span>Every mile has a story.</span><Check size={18} aria-hidden="true" /></div>
-      <dl className="rs-preview__metrics">
-        <div><dt>Distance</dt><dd>3.2 <small>mi</small></dd></div>
-        <div><dt>Time</dt><dd>58 <small>min</small></dd></div>
-        <div><dt>Pack load</dt><dd>20 <small>lb</small></dd></div>
-      </dl>
-      <figcaption>Illustrative workout · not an app screenshot</figcaption>
+    <figure className="rs-app-preview">
+      <div className="rs-app-preview__frame">
+        <img src="/assets/ruckstride-today.png" alt="Ruckstride on iPhone, showing the Today screen with weekly goals, recent activity and the start ruck button" width="1320" height="2868" fetchPriority="high" />
+      </div>
+      <figcaption>Ruckstride on iPhone · Sample workout data</figcaption>
     </figure>
   );
 }
@@ -53,14 +40,14 @@ export function RuckstridePage() {
       <section className="rs-hero">
         <div className="ds-shell rs-hero__grid">
           <div className="rs-hero__copy">
-            <div className="rs-identity"><RuckstrideMark /><span>RUCKSTRIDE</span></div>
+            <div className="rs-identity"><RuckstrideMark /><span>ruckstride</span></div>
             <p className="rs-eyebrow">Rucking &amp; weighted walking · for iPhone</p>
             <h1>A little weight.<br /><em>A little further.</em></h1>
             <p className="rs-lede">Put your pack on. Find your pace. Keep a clear record of the miles, minutes and load that make each walk your own.</p>
             <div className="ds-actions"><a className="ds-button rs-button" href="#how-it-works">Explore Ruckstride <ArrowRight size={17} aria-hidden="true" /></a><Link className="rs-quiet-link" to={SUPPORT}>App support</Link></div>
             <p className="rs-launch-note"><span /> In development for iPhone. Not yet available on the App Store.</p>
           </div>
-          <RouteIllustration />
+          <AppPreview />
         </div>
       </section>
       <nav className="rs-product-nav" aria-label="Ruckstride navigation"><div className="ds-shell"><a href="#how-it-works">The everyday essentials</a><a href="#ruckstride-pro">Ruckstride Pro</a><Link to={PRIVACY}>Privacy</Link><Link to={TERMS}>Terms</Link><Link to={SUPPORT}>Support <ArrowRight size={15} aria-hidden="true" /></Link></div></nav>
@@ -104,7 +91,7 @@ function RuckstrideDocument({ title, description, path, children }) {
   return (
     <SitePage>
       <PageMeta title={`${title} — Ruckstride`} description={description} path={path} />
-      <header className="legal-hero rs-document-hero"><div className="ds-shell legal-hero__inner"><Link to={HOME}><ArrowLeft size={16} aria-hidden="true" /> Back to Ruckstride</Link><div className="legal-hero__identity"><Backpack size={25} aria-hidden="true" /><span>RUCKSTRIDE · EVERY STEP ADDS UP</span></div><h1>{title}</h1><p>{path === SUPPORT ? "Practical help for your next walk" : `Effective ${UPDATED}`}</p></div></header>
+      <header className="legal-hero rs-document-hero"><div className="ds-shell legal-hero__inner"><Link to={HOME}><ArrowLeft size={16} aria-hidden="true" /> Back to Ruckstride</Link><div className="legal-hero__identity"><RuckstrideMark /><span>RUCKSTRIDE · EVERY STEP ADDS UP</span></div><h1>{title}</h1><p>{path === SUPPORT ? "Practical help for your next walk" : `Effective ${UPDATED}`}</p></div></header>
       <div className="ds-shell legal-layout"><aside aria-label="Ruckstride information"><strong>{path === SUPPORT ? "Here to help" : "At a glance"}</strong><p>{description}</p>{path !== PRIVACY && <p><Link to={PRIVACY}>Read the Privacy Policy</Link></p>}{path !== TERMS && <p><Link to={TERMS}>Read the Terms of Service</Link></p>}{path !== SUPPORT && <p><Link to={SUPPORT}>Ruckstride support</Link></p>}<a href={EMAIL}>Email the studio <Mail size={14} aria-hidden="true" /></a></aside><article className="legal-document">{children}</article></div>
     </SitePage>
   );

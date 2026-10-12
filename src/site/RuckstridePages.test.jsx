@@ -58,8 +58,11 @@ test("terms and support preserve free data controls and explain separate Apple b
   cleanup();
   renderAt("/ruckstride/support");
   await screen.findByRole("heading", { name: "Keep your next step simple.", level: 1 });
-  expect(screen.getByText(/open Settings → Your data → Export my data/i)).toHaveTextContent(/free JSON copy/i);
-  expect(screen.getByText(/open Settings → Your data → Delete all workout data/i)).toHaveTextContent(/available without Pro/i);
+  const exportHelp = screen.getByText(/open You → Your data → Export my data/i);
+  expect(exportHelp).toHaveTextContent(/free JSON copy/i);
+  expect(exportHelp).toHaveTextContent(/Export workout data in the same section for a CSV/i);
+  expect(exportHelp).toHaveTextContent(/open a saved outdoor workout in Journal and choose Export route as GPX/i);
+  expect(screen.getByText(/open You → Your data → Delete all workout data/i)).toHaveTextContent(/available without Pro/i);
   expect(screen.getByRole("link", { name: "email Ruckstride support" })).toHaveAttribute("href", "mailto:info@digitalsprout.org?subject=Ruckstride%20Support");
 });
 

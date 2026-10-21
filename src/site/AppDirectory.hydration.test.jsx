@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
-import { act, StrictMode } from 'react';
+import { act } from '@testing-library/react';
+import { StrictMode } from 'react';
 import { hydrateRoot } from 'react-dom/client';
 import { expect, test, vi } from 'vitest';
 import App from '../App';
@@ -10,7 +11,7 @@ test('a category URL hydrates the static all-apps directory before applying its 
   document.body.appendChild(container);
   // Run after npm run build: use the shipped HTML so server and browser React
   // renderers cannot share context state inside the same test process.
-  const html = await readFile(new URL('../../dist/apps/index.html', import.meta.url), 'utf8');
+  const html = await readFile('dist/apps/index.html', 'utf8');
   const builtPage = new DOMParser().parseFromString(html, 'text/html');
   container.innerHTML = builtPage.getElementById('root').innerHTML;
   const status = () => container.querySelector('[role="status"]');

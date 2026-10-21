@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Activity,
@@ -51,34 +51,6 @@ const termsSections = [
   ["apple", "Apple terms"],
   ["general", "General terms and contact"],
 ];
-
-const usePageMetadata = (title, description) => {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = `${appName} ${title} | Digital Sprout`;
-
-    let descriptionTag = document.querySelector('meta[name="description"]');
-    const createdDescription = !descriptionTag;
-    if (createdDescription) {
-      descriptionTag = document.createElement("meta");
-      descriptionTag.setAttribute("name", "description");
-      document.head.appendChild(descriptionTag);
-    }
-    const previousDescription = descriptionTag.getAttribute("content");
-    descriptionTag.setAttribute("content", description);
-
-    return () => {
-      document.title = previousTitle;
-      if (createdDescription) {
-        descriptionTag.remove();
-      } else if (previousDescription === null) {
-        descriptionTag.removeAttribute("content");
-      } else {
-        descriptionTag.setAttribute("content", previousDescription);
-      }
-    };
-  }, [title, description]);
-};
 
 const Brand = ({ dark = false }) => (
   <span className="inline-flex items-center gap-2" aria-label="Digital Sprout">
@@ -174,7 +146,6 @@ const LegalLayout = ({
   sections,
   children,
 }) => {
-  usePageMetadata(title, description);
   const isPrivacy = activePage === "privacy";
 
   return (

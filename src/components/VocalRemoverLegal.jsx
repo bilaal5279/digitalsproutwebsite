@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Apple,
@@ -57,56 +57,6 @@ const termsSections = [
   ["apple", "Apple terms"],
   ["general", "General terms"],
 ];
-
-const usePageMetadata = (title, description, canonicalPath) => {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = `${appName} ${title} | Digital Sprout`;
-
-    let descriptionTag = document.querySelector('meta[name="description"]');
-    const createdDescription = !descriptionTag;
-    if (createdDescription) {
-      descriptionTag = document.createElement("meta");
-      descriptionTag.setAttribute("name", "description");
-      document.head.appendChild(descriptionTag);
-    }
-    const previousDescription = descriptionTag.getAttribute("content");
-    descriptionTag.setAttribute("content", description);
-
-    let canonicalTag = document.querySelector('link[rel="canonical"]');
-    const createdCanonical = !canonicalTag;
-    if (createdCanonical) {
-      canonicalTag = document.createElement("link");
-      canonicalTag.setAttribute("rel", "canonical");
-      document.head.appendChild(canonicalTag);
-    }
-    const previousCanonical = canonicalTag.getAttribute("href");
-    canonicalTag.setAttribute(
-      "href",
-      `https://digitalsprout.org${canonicalPath}`,
-    );
-
-    return () => {
-      document.title = previousTitle;
-
-      if (createdDescription) {
-        descriptionTag.remove();
-      } else if (previousDescription === null) {
-        descriptionTag.removeAttribute("content");
-      } else {
-        descriptionTag.setAttribute("content", previousDescription);
-      }
-
-      if (createdCanonical) {
-        canonicalTag.remove();
-      } else if (previousCanonical === null) {
-        canonicalTag.removeAttribute("href");
-      } else {
-        canonicalTag.setAttribute("href", previousCanonical);
-      }
-    };
-  }, [title, description, canonicalPath]);
-};
 
 const Brand = ({ dark = false }) => (
   <span className="inline-flex items-center gap-2" aria-label="Digital Sprout">
@@ -224,9 +174,7 @@ const LegalLayout = ({
   sections,
   children,
 }) => {
-  const canonicalPath = activePage === "privacy" ? privacyPath : termsPath;
   const isPrivacy = activePage === "privacy";
-  usePageMetadata(title, description, canonicalPath);
 
   return (
     <div className="min-h-screen bg-[#f6f9fc] text-slate-900">

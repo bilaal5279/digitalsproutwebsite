@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, describe, expect, test } from 'vitest';
 import App from './App';
-import { legalDirectory, studioProjects } from './site/siteData';
+import { featuredProjects, legalDirectory, studioProjects } from './site/siteData';
 
 afterEach(() => {
   cleanup();
@@ -16,19 +16,22 @@ function renderAt(path) {
 describe('public routes', () => {
   test('renders the redesigned studio homepage', async () => {
     renderAt('/');
-    expect(await screen.findByRole('heading', { name: /practical apps.*thoughtfully made/i })).toBeInTheDocument();
-    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.length} projects`);
-    expect(screen.getAllByRole('article')).toHaveLength(studioProjects.length + 3);
+    expect(await screen.findByRole('heading', { name: /good apps.*for your.*everyday/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Find your next app' })).toHaveAttribute('href', '/apps');
+    for (const app of featuredProjects) {
+      expect(screen.getByRole('link', { name: `Explore ${app.name}` })).toHaveAttribute('href', app.product);
+      expect(app.appStoreUrl || app.googlePlayUrl).toBeTruthy();
+    }
+    expect(screen.queryByRole('heading', { name: /HRTree|Ruckstride/ })).not.toBeInTheDocument();
   });
 
   test('renders the TipMint product page', async () => {
     renderAt('/tip-tracker');
-    expect(await screen.findByRole('heading', { name: /own the shift.*know the total/i })).toBeInTheDocument();
-    expect(screen.getAllByText(/estimated earnings/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/net tips/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/\$5\.99/)).toBeInTheDocument();
-    expect(screen.getByText(/\$34\.99/)).toBeInTheDocument();
-    expect(screen.getByText(/does not calculate taxes or payroll deductions/i)).toBeInTheDocument();
+    const tipmint = studioProjects.find((app) => app.name === 'TipMint');
+    expect(await screen.findByRole('heading', { level: 1 })).toHaveTextContent(tipmint.tagline);
+    expect(screen.getAllByRole('link', { name: 'Download TipMint on the App Store' })[0]).toHaveAttribute('href', tipmint.appStoreUrl);
+    expect(screen.getByText(/see the store listing for current pricing/i)).toBeInTheDocument();
+    expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute('href', 'https://digitalsprout.org/tip-tracker');
   });
 
   test('renders TipMint privacy and legal facts', async () => {
@@ -123,26 +126,49 @@ describe('public routes', () => {
 
 describe('project directory', () => {
   test('searches by name and clears the search', () => {
-    renderAt('/');
+    renderAt('/apps');
     fireEvent.change(screen.getByRole('searchbox', { name: 'Search apps' }), { target: { value: ' luma ' } });
-    expect(screen.getByRole('status')).toHaveTextContent('1 project');
+    expect(screen.getByRole('status')).toHaveTextContent('1 app');
     expect(screen.getByRole('heading', { name: 'Luma' })).toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: 'Revive' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Clear app search' }));
-    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.length} projects`);
+    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.length} apps`);
   });
 
   test('combines category filters and search, then resets empty results', () => {
-    renderAt('/');
+    renderAt('/apps');
     fireEvent.click(screen.getByRole('button', { name: 'Wellbeing' }));
     expect(screen.getByRole('button', { name: 'Wellbeing' })).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.filter((app) => app.category === 'Wellbeing').length} projects in Wellbeing`);
+    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.filter((app) => app.category === 'Wellbeing').length} apps in Wellbeing`);
+    expect(new URLSearchParams(window.location.search).get('category')).toBe('Wellbeing');
     fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'TipMint' } });
     expect(screen.getByRole('heading', { name: 'No apps found' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Show all apps' }));
     expect(screen.getByRole('searchbox')).toHaveValue('');
     expect(screen.getByRole('button', { name: 'All apps' })).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.length} projects`);
+    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.length} apps`);
+    expect(window.location.search).toBe('');
+  });
+
+  test('opens category links directly and falls back for an unknown category', () => {
+    renderAt('/apps?category=Work%20%26%20money');
+    expect(screen.getByRole('button', { name: 'Work & money' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('status')).toHaveTextContent('apps in Work & money');
+    expect(screen.queryByRole('heading', { name: 'Luma' })).not.toBeInTheDocument();
+    cleanup();
+    renderAt('/apps?category=unknown');
+    expect(screen.getByRole('button', { name: 'All apps' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('status')).toHaveTextContent(`${studioProjects.length} apps`);
+  });
+
+  test('links every app to its product page and prioritizes verified live apps', () => {
+    renderAt('/apps');
+    for (const app of studioProjects) {
+      expect(screen.getByRole('link', { name: `Explore ${app.name}` })).toHaveAttribute('href', app.product);
+    }
+    const firstUnavailable = studioProjects.findIndex((app) => app.upcoming);
+    if (firstUnavailable >= 0) expect(studioProjects.slice(firstUnavailable).every((app) => app.upcoming)).toBe(true);
+    expect(screen.queryByRole('heading', { name: /HRTree|Ruckstride/ })).not.toBeInTheDocument();
   });
 
   test('keeps every app policy at its original URL in the support hub', () => {

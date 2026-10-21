@@ -41,7 +41,7 @@ export function SupportPage() {
 export function NotFoundPage() {
   return (
     <SitePage>
-      <PageMeta title="Page not found — DigitalSprout" description="The DigitalSprout page you requested could not be found." path="/404" />
+      <PageMeta title="Page not found — DigitalSprout" description="The DigitalSprout page you requested could not be found." path="/404" noindex />
       <section className="not-found">
         <div className="ds-shell not-found__inner">
           <SearchX size={44} aria-hidden="true" />

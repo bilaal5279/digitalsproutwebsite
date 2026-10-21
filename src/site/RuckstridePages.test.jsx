@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor, within } from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
 import App from "../App";
 
@@ -18,23 +18,19 @@ function renderAt(path) {
 }
 
 test.each([
-  ["/ruckstride", /a little weight.*a little further/i],
   ["/ruckstride/privacy-policy", "Privacy Policy"],
   ["/ruckstride/terms-of-service", "Terms of Service"],
   ["/ruckstride/support", "Keep your next step simple."],
 ])("Ruckstride route %s renders its own document and canonical URL", async (path, heading) => {
   renderAt(path);
-  expect(await screen.findByRole("heading", { name: heading, level: 1 }, { timeout: 5000 })).toBeInTheDocument();
+  expect(await screen.findByRole("heading", { name: heading, level: 1 })).toBeInTheDocument();
   await waitFor(() => expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute("href", `https://digitalsprout.org${path}`));
 });
 
-test("the landing page accurately identifies launch status and links to support and policies", async () => {
+test("the removed marketing page is not publicly promoted", async () => {
   renderAt("/ruckstride");
-  expect(await screen.findByText(/not yet available on the App Store/i)).toBeInTheDocument();
-  const nav = screen.getByRole("navigation", { name: "Ruckstride navigation" });
-  expect(within(nav).getByRole("link", { name: "Privacy" })).toHaveAttribute("href", "/ruckstride/privacy-policy");
-  expect(within(nav).getByRole("link", { name: "Terms" })).toHaveAttribute("href", "/ruckstride/terms-of-service");
-  expect(within(nav).getByRole("link", { name: /support/i })).toHaveAttribute("href", "/ruckstride/support");
+  expect(await screen.findByRole("heading", { name: /this page hasn’t sprouted/i })).toBeInTheDocument();
+  expect(document.querySelector('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
   expect(screen.queryByRole("link", { name: /download/i })).not.toBeInTheDocument();
 });
 
@@ -66,15 +62,14 @@ test("terms and support preserve free data controls and explain separate Apple b
   expect(screen.getByRole("link", { name: "email Ruckstride support" })).toHaveAttribute("href", "mailto:info@digitalsprout.org?subject=Ruckstride%20Support");
 });
 
-test("Ruckstride is discoverable in the existing app and support directories", async () => {
-  renderAt("/");
-  const appCard = (await screen.findByRole("heading", { name: "Ruckstride", level: 3 })).closest("article");
-  expect(within(appCard).getByRole("link", { name: "Explore Ruckstride" })).toHaveAttribute("href", "/ruckstride");
-  expect(within(appCard).getByText("In development")).toBeInTheDocument();
+test("Ruckstride stays out of the public directories while its support URL is retained", async () => {
+  renderAt("/apps");
+  expect(screen.queryByRole("heading", { name: "Ruckstride", level: 3 })).not.toBeInTheDocument();
   cleanup();
   renderAt("/support");
-  const supportCard = (await screen.findByRole("heading", { name: "Ruckstride", level: 3 })).closest("article");
-  expect(within(supportCard).getByRole("link", { name: "Ruckstride support" })).toHaveAttribute("href", "/ruckstride/support");
-  expect(within(supportCard).getByRole("link", { name: "Ruckstride privacy policy" })).toHaveAttribute("href", "/ruckstride/privacy-policy");
-  expect(within(supportCard).getByRole("link", { name: "Ruckstride terms of service" })).toHaveAttribute("href", "/ruckstride/terms-of-service");
+  expect(screen.queryByRole("heading", { name: "Ruckstride", level: 3 })).not.toBeInTheDocument();
+  cleanup();
+  renderAt("/ruckstride/support");
+  expect(await screen.findByRole("heading", { name: "Keep your next step simple.", level: 1 })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "email Ruckstride support" })).toHaveAttribute("href", "mailto:info@digitalsprout.org?subject=Ruckstride%20Support");
 });

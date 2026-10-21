@@ -91,7 +91,7 @@ function RuckstrideDocument({ title, description, path, children }) {
   return (
     <SitePage>
       <PageMeta title={`${title} — Ruckstride`} description={description} path={path} />
-      <header className="legal-hero rs-document-hero"><div className="ds-shell legal-hero__inner"><Link to={HOME}><ArrowLeft size={16} aria-hidden="true" /> Back to Ruckstride</Link><div className="legal-hero__identity"><RuckstrideMark /><span>RUCKSTRIDE · EVERY STEP ADDS UP</span></div><h1>{title}</h1><p>{path === SUPPORT ? "Practical help for your next walk" : `Effective ${UPDATED}`}</p></div></header>
+      <header className="legal-hero rs-document-hero"><div className="ds-shell legal-hero__inner"><Link to="/apps"><ArrowLeft size={16} aria-hidden="true" /> Back to all apps</Link><div className="legal-hero__identity"><RuckstrideMark /><span>RUCKSTRIDE · EVERY STEP ADDS UP</span></div><h1>{title}</h1><p>{path === SUPPORT ? "Practical help for your next walk" : `Effective ${UPDATED}`}</p></div></header>
       <div className="ds-shell legal-layout"><aside aria-label="Ruckstride information"><strong>{path === SUPPORT ? "Here to help" : "At a glance"}</strong><p>{description}</p>{path !== PRIVACY && <p><Link to={PRIVACY}>Read the Privacy Policy</Link></p>}{path !== TERMS && <p><Link to={TERMS}>Read the Terms of Service</Link></p>}{path !== SUPPORT && <p><Link to={SUPPORT}>Ruckstride support</Link></p>}<a href={EMAIL}>Email the studio <Mail size={14} aria-hidden="true" /></a></aside><article className="legal-document">{children}</article></div>
     </SitePage>
   );

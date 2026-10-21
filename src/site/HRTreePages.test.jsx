@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor, within } from '@testing-library/react';
+import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, expect, test } from 'vitest';
 import App from '../App';
 
@@ -51,10 +51,14 @@ test.each([
   await waitFor(() => expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute('href', `https://digitalsprout.org${canonical}`));
 });
 
-test('HRTree policies and support are discoverable in the existing directory', async () => {
+test('HRTree is omitted from the public directories while existing support remains accessible', async () => {
+  renderAt('/apps');
+  expect(screen.queryByRole('heading', { name: 'HRTree', level: 3 })).not.toBeInTheDocument();
+  cleanup();
   renderAt('/support');
-  const card = (await screen.findByRole('heading', { name: 'HRTree', level: 3 })).closest('article');
-  expect(within(card).getByRole('link', { name: 'HRTree support' })).toHaveAttribute('href', '/hrtree/support');
-  expect(within(card).getByRole('link', { name: 'HRTree privacy policy' })).toHaveAttribute('href', '/hrtree/privacy-policy');
-  expect(within(card).getByRole('link', { name: 'HRTree terms of service' })).toHaveAttribute('href', '/hrtree/terms-of-service');
+  expect(screen.queryByRole('heading', { name: 'HRTree', level: 3 })).not.toBeInTheDocument();
+  cleanup();
+  renderAt('/hrtree/support');
+  expect(await screen.findByRole('heading', { name: 'A little help, when you need it.' })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'email HRTree support' })).toHaveAttribute('href', 'mailto:info@digitalsprout.org?subject=HRTree%20Support');
 });

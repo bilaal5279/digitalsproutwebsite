@@ -1,39 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { ArrowUpRight, Mail, Menu } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { legalDirectory } from "./siteData";
 
-export function PageMeta({ title, description, path = "/" }) {
-  useEffect(() => {
-    document.title = title;
-
-    const ensureMeta = (selector, attributes) => {
-      let element = document.head.querySelector(selector);
-      if (!element) {
-        element = document.createElement("meta");
-        document.head.appendChild(element);
-      }
-      Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
-    };
-
-    ensureMeta('meta[name="description"]', { name: "description", content: description });
-    ensureMeta('meta[property="og:title"]', { property: "og:title", content: title });
-    ensureMeta('meta[property="og:description"]', { property: "og:description", content: description });
-    ensureMeta('meta[property="og:url"]', { property: "og:url", content: `https://digitalsprout.org${path}` });
-    ensureMeta('meta[name="twitter:title"]', { name: "twitter:title", content: title });
-    ensureMeta('meta[name="twitter:description"]', { name: "twitter:description", content: description });
-
-    let canonical = document.head.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute("href", `https://digitalsprout.org${path}`);
-  }, [description, path, title]);
-
-  return null;
-}
+export { PageMeta } from "./PageMeta";
 
 export function Brand({ inverse = false }) {
   return (
@@ -45,6 +15,9 @@ export function Brand({ inverse = false }) {
 }
 
 export function SiteHeader({ dark = false }) {
+  const menu = useRef(null);
+  const location = useLocation();
+  useEffect(() => { if (menu.current) menu.current.open = false; }, [location]);
   return (
     <header className={`ds-header ${dark ? "ds-header--dark" : ""}`}>
       <div className="ds-shell ds-header__inner">
@@ -52,20 +25,20 @@ export function SiteHeader({ dark = false }) {
           <Brand inverse={dark} />
         </Link>
         <nav className="ds-nav" aria-label="Main navigation">
-          <a href="/#apps">Our apps</a>
-          <a href="/#approach">The studio</a>
-          <a href="/support#policies">Privacy & terms</a>
+          <NavLink to="/apps">Our apps</NavLink>
+          <NavLink to="/about">The studio</NavLink>
+          <Link to="/support#policies">Privacy & terms</Link>
           <Link to="/support" className="ds-button ds-button--small ds-button--ink">
             Get support <ArrowUpRight size={15} aria-hidden="true" />
           </Link>
         </nav>
-        <details className="ds-mobile-menu">
+        <details className="ds-mobile-menu" ref={menu} onKeyDown={(event) => { if (event.key === "Escape") { event.currentTarget.open = false; event.currentTarget.querySelector("summary").focus(); } }}>
           <summary aria-label="Open navigation"><Menu size={22} aria-hidden="true" /> Menu</summary>
           <nav aria-label="Mobile navigation">
-            <a href="/#apps">Our apps</a>
-            <a href="/#approach">The studio</a>
-            <a href="/support#policies">Privacy & terms</a>
-            <a href="/support">Get support</a>
+            <NavLink to="/apps">Our apps</NavLink>
+            <NavLink to="/about">The studio</NavLink>
+            <Link to="/support#policies">Privacy & terms</Link>
+            <Link to="/support">Get support</Link>
           </nav>
         </details>
       </div>
@@ -83,8 +56,8 @@ export function SiteFooter() {
             <p>Independent apps with a clear purpose, thoughtfully made in the UK.</p>
           </div>
           <div className="ds-footer__links" aria-label="Footer navigation">
-            <a href="/#apps">Our apps</a>
-            <a href="/#approach">The studio</a>
+            <NavLink to="/apps">Our apps</NavLink>
+            <NavLink to="/about">The studio</NavLink>
             <Link to="/support">Support</Link>
             <a href="mailto:info@digitalsprout.org">Email us</a>
           </div>
@@ -119,7 +92,7 @@ export function SitePage({ children, darkHeader = false }) {
     <div className="ds-site">
       <a className="ds-skip-link" href="#main-content">Skip to content</a>
       <SiteHeader dark={darkHeader} />
-      <main id="main-content">{children}</main>
+      <main id="main-content" tabIndex={-1}>{children}</main>
       <SiteFooter />
     </div>
   );

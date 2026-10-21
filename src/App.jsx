@@ -1,9 +1,12 @@
-import { createElement, lazy, Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createElement, lazy, Suspense, useEffect } from "react";
+import { BrowserRouter, Link, Route, Routes, useLocation } from "react-router-dom";
+import { studioProjects } from "./site/siteData";
+import { canonicalPath } from "./site/seo";
 import HomePage from "./site/HomePage";
+import AboutPage from "./site/AboutPage";
+import { AppsPage, ProductPage } from "./site/ProductPages";
 import { PageMeta } from "./site/SiteChrome";
 import {
-  TipTrackerPage,
   TipTrackerPrivacyPolicy,
   TipTrackerSupport,
   TipTrackerTermsOfService,
@@ -62,7 +65,6 @@ const HRTreePrivacyPolicy = lazyNamed(() => import("./site/HRTreePages"), "HRTre
 const HRTreeTermsOfService = lazyNamed(() => import("./site/HRTreePages"), "HRTreeTermsOfService");
 const HRTreeSupport = lazyNamed(() => import("./site/HRTreePages"), "HRTreeSupport");
 
-const RuckstridePage = lazyNamed(() => import("./site/RuckstridePages"), "RuckstridePage");
 const RuckstridePrivacyPolicy = lazyNamed(() => import("./site/RuckstridePages"), "RuckstridePrivacyPolicy");
 const RuckstrideTermsOfService = lazyNamed(() => import("./site/RuckstridePages"), "RuckstrideTermsOfService");
 const RuckstrideSupport = lazyNamed(() => import("./site/RuckstridePages"), "RuckstrideSupport");
@@ -131,25 +133,29 @@ function LoadingPage() {
 }
 
 function LegacyPage({ path, title, Component }) {
+  const app = studioProjects.find((item) => [item.privacy, item.terms].includes(canonicalPath(path)));
   return (
     <>
       <PageMeta title={`${title} — DigitalSprout`} description={`${title} for a DigitalSprout app.`} path={path} />
+      {app && <nav className="legacy-appbar" aria-label="App information"><div className="ds-shell"><Link to={app.product}>← Explore {app.name}</Link><Link to="/apps">All apps</Link><Link to="/support">Get support</Link></div></nav>}
       {createElement(Component)}
     </>
   );
 }
 
-function AppRoutes() {
+export function AppRoutes() {
   return (
     <Suspense fallback={<LoadingPage />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/tip-tracker" element={<TipTrackerPage />} />
+        <Route path="/apps" element={<AppsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/apps/:slug" element={<ProductPage />} />
+        <Route path="/tip-tracker" element={<ProductPage appSlug="tipmint" />} />
         <Route path="/tip-tracker/privacy-policy" element={<TipTrackerPrivacyPolicy />} />
         <Route path="/tip-tracker/terms-of-service" element={<TipTrackerTermsOfService />} />
         <Route path="/tip-tracker/support" element={<TipTrackerSupport />} />
         <Route path="/support" element={<SupportPage />} />
-        <Route path="/ruckstride" element={<RuckstridePage />} />
         <Route path="/ruckstride/privacy-policy" element={<RuckstridePrivacyPolicy />} />
         <Route path="/ruckstride/terms-of-service" element={<RuckstrideTermsOfService />} />
         <Route path="/ruckstride/support" element={<RuckstrideSupport />} />
@@ -169,6 +175,17 @@ function AppRoutes() {
   );
 }
 
+export function RouteScroll() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const id = decodeURIComponent(hash.slice(1));
+      requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView());
+    } else window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname, hash]);
+  return null;
+}
+
 export default function App() {
-  return <BrowserRouter><AppRoutes /></BrowserRouter>;
+  return <BrowserRouter><RouteScroll /><AppRoutes /></BrowserRouter>;
 }

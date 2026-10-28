@@ -35,10 +35,10 @@ const HoursTrackerPrivacyPolicy = () => {
                     </div>
                     <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
                     <h2 className="text-xl text-teal-300 max-w-2xl mx-auto uppercase tracking-wide">
-                        Hours Tracker: Clock In
+                        Hours Tracker
                     </h2>
                     <p className="text-teal-400 mt-2">
-                        Effective Date: April 23, 2026
+                        Last Updated: October 28, 2026
                     </p>
                 </div>
             </div>
@@ -54,8 +54,8 @@ const HoursTrackerPrivacyPolicy = () => {
                             <h2 className="text-2xl font-bold text-gray-900">Introduction</h2>
                         </div>
                         <p className="text-gray-600 leading-relaxed">
-                            Hours Tracker: Clock In ("the App") is a productivity tool designed to help you log work hours, manage freelance projects, and export time logs. 
-                            We believe your data belongs to you. This Privacy Policy explains our commitment to your privacy and how we handle information.
+                            Hours Tracker ("the App") is a productivity tool designed to help you log work hours, manage freelance projects, and export time logs.
+                            We believe your data belongs to you. This Privacy Policy explains how DigitalSprout Ltd handles your work data, purchases, and optional advertising measurement.
                         </p>
                     </section>
 
@@ -71,7 +71,7 @@ const HoursTrackerPrivacyPolicy = () => {
                                 <h3 className="text-lg font-semibold text-teal-900">Local-First Privacy</h3>
                             </div>
                             <p className="text-teal-800">
-                                <strong>Your work logs are private.</strong> All time logs, job details, and notes you enter into the App are stored exclusively on your device. We do not have servers that store your work history.
+                                <strong>Your work logs are private.</strong> Your time logs, job details, hourly rates, earnings, and notes are stored on your device. We do not upload this work data to our servers or send it to Meta. If you export or share a file, you choose where it goes.
                             </p>
                         </div>
 
@@ -86,16 +86,45 @@ const HoursTrackerPrivacyPolicy = () => {
                             <li className="flex items-start">
                                 <span className="text-teal-600 mr-2">•</span>
                                 <div>
+                                    <strong>Optional Advertising Measurement:</strong> Versions that include Meta advertising measurement share app activation, installation and session information, together with advertising, device and technical information, only after you allow tracking through Apple's permission prompt. The section below explains this choice.
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-teal-600 mr-2">•</span>
+                                <div>
                                     <strong>No Account Required:</strong> You do not need to provide an email address or name to use the App.
                                 </div>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-teal-600 mr-2">•</span>
                                 <div>
-                                    <strong>Local Storage:</strong> Your tracking data stays on your phone. If you delete the app, your tracking data is removed.
+                                    <strong>Local Storage:</strong> Your work data stays on your phone unless you choose to export or share it. Copies in device backups or exported files are controlled by the storage service or recipient you choose.
                                 </div>
                             </li>
                         </ul>
+                    </section>
+
+                    {/* Optional Advertising Measurement */}
+                    <section className="mb-8" id="advertising-measurement">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">Optional Advertising Measurement with Meta</h2>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            In versions that include this feature, we use the Meta SDK to understand whether our Facebook and Instagram advertisements lead people to install and open Hours Tracker, and to measure and improve our advertising. Versions without this feature do not send these app events to Meta.
+                        </p>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            We initialize Meta advertising measurement and send app events only after you choose Allow in Apple's App Tracking Transparency prompt. If you decline, are not eligible to grant permission, or have not made a choice, this Meta measurement remains off. You can use the App without allowing tracking.
+                        </p>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            When enabled, Meta may receive your device's advertising identifier (IDFA), an app installation identifier, app activation and first-launch information, session timing, and technical context such as app and SDK versions, device and operating-system information, language and time zone. Network requests also disclose information such as your IP address. Meta may link this information with information from its services and other companies' apps and websites for advertising measurement and to improve advertising.
+                        </p>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            We do not send your time entries, work schedules, job or client names, hourly rates, calculated earnings, notes, or exported timesheets to Meta. We do not provide Meta with your name, email address, or other contact details for matching. Automatic event collection, automatic advanced matching, codeless event collection, screen-title and link collection, and screen-content collection for product improvement are disabled for this integration.
+                        </p>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            You can withdraw tracking permission at any time in iOS Settings → Privacy &amp; Security → Tracking → Hours Tracker. The App checks this permission when it becomes active and before recording new advertising events. After permission is withdrawn, the App stops requesting new Meta app events and disables advertising identifier collection. This does not automatically delete information already received by Meta.
+                        </p>
+                        <p className="text-gray-600 leading-relaxed">
+                            Learn how Meta uses and retains information and how to manage your choices in the <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-teal-700 underline">Meta Privacy Policy</a>.
+                        </p>
                     </section>
 
                     {/* Data Export */}
@@ -118,6 +147,10 @@ const HoursTrackerPrivacyPolicy = () => {
                         <ul className="space-y-2 text-gray-600">
                             <li className="flex items-start">
                                 <span className="text-teal-600 mr-2">•</span>
+                                <div><strong>Tracking (optional):</strong> In supported versions, to measure and improve our advertising through Meta after you allow tracking. Declining does not restrict app features.</div>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-teal-600 mr-2">•</span>
                                 <strong>Notifications:</strong> To remind you to clock out or notify you of active timers.
                             </li>
                             <li className="flex items-start">
@@ -134,7 +167,18 @@ const HoursTrackerPrivacyPolicy = () => {
                             <h2 className="text-2xl font-bold text-gray-900">Security</h2>
                         </div>
                         <p className="text-gray-600 leading-relaxed">
-                            Since your data is stored locally, its security depends on the security of your device. We recommend using your device's built-in security features (Passcode, FaceID, TouchID) to protect your information.
+                            Your on-device work data is protected by your device’s security. Purchases and optional advertising information are processed by the service providers described above. We recommend using your device's built-in security features (Passcode, FaceID, TouchID) to protect your information.
+                        </p>
+                    </section>
+
+                    {/* Deletion and Privacy Requests */}
+                    <section className="mb-8" id="deletion-requests">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">Deleting Data and Privacy Requests</h2>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            You can remove your work entries within the App or remove the App's local data by deleting the App. Separately delete any exported files or backups you no longer want to retain. Deleting the App does not cancel an App Store subscription; manage subscriptions in your Apple account settings.
+                        </p>
+                        <p className="text-gray-600 leading-relaxed">
+                            For access, deletion, or other privacy requests relating to information processed by DigitalSprout or its service providers, email <a href="mailto:info@digitalsprout.org" className="text-teal-700 underline">info@digitalsprout.org</a>. We will explain what information we can identify and help direct requests to the relevant provider. We do not have a server copy of your work logs to retrieve or delete. Information already processed by Meta is also subject to the choices and retention practices in its linked privacy policy.
                         </p>
                     </section>
 
@@ -160,7 +204,7 @@ const HoursTrackerPrivacyPolicy = () => {
                             <h3 className="text-lg font-semibold text-teal-800">Privacy Commitment</h3>
                         </div>
                         <p className="text-teal-700 font-medium">
-                            Hours Tracker: Clock In is a "no-data-collection" app. Everything you log stays on your device. We don't see it, we don't store it, and we don't sell it.
+                            Your work logs, job details, rates, earnings, and notes stay on your device unless you choose to export or share them. RevenueCat handles subscription information. Optional Meta advertising measurement is separate from your work data and requires your tracking permission.
                         </p>
                     </div>
                 </div>
